@@ -1,0 +1,28 @@
+<div class="row border-content">
+    <div class="col-md-9">
+        {{#each data}}
+
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 id="zz">{{title}}</h3>
+                        <p>posted by {{user}} si na data 2107</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src={{img}}>
+                    </div>
+                    <div class="col-md-8">
+                        <p>{{text}}</p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-default pull-right">More</button>
+
+        {{/each}}
+    </div>
+    <div class="col-md-3">
+        <div class="row"><h4>comments</h4></div>
+    </div>
+</div>

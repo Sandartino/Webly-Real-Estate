@@ -1,0 +1,15 @@
+{
+  "name": "webly-spa",
+  "version": "1.0.0",
+  "description": "Telerik Front-End Development Course Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Plamen Apostolov",
+  "license": "ISC",
+  "dependencies": {
+    "systemjs": "^0.20.2",
+    "systemjs-plugin-babel": "0.0.19"
+  }
+}

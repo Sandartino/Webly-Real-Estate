@@ -1,0 +1,21 @@
+{
+  "name": "Webly-SPA",
+  "main": "index.js",
+  "authors": [
+    "Plamen Apostolov"
+  ],
+  "description": "Telerik Front-End Develeopment course project",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "handlebars": "^4.0.5"
+  }
+}

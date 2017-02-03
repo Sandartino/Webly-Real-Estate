@@ -1,0 +1,31 @@
+{
+  "offset": 0,
+  "data": [
+    {
+      "img": "http://wimlworkshop.org/2016/wp-content/uploads/2016/05/334898_p-G-Research-561305-150x150.jpg",
+      "created": 1485691690000,
+      "___class": "browse",
+      "text": "В съобщението се уточнява, че разговорът е бил дълъг, предаде Франс прес. \"Президентът и канцлерът са съгласни да признаят фундаменталната важност на НАТО в рамките на едно по-широко трансатлантическо сътрудничество и нейната роля за гарантиране на мира и стабилността на нашата северноатлантическа общност\", се казва в комюникето на Белия дом относно телефонния разговор",
+      "title": "Title gosho",
+      "ownerId": null,
+      "user": "gosho",
+      "updated": 1485700846000,
+      "objectId": "920B262D-31C4-A681-FF0E-1041677FAF00",
+      "__meta": "{\"relationRemovalIds\":{},\"selectedProperties\":[\"img\",\"created\",\"___class\",\"text\",\"title\",\"ownerId\",\"user\",\"updated\",\"objectId\"],\"relatedObjects\":{}}"
+    },
+    {
+      "img": "http://csmegagaming.com/forum/download/file.php?avatar=3097_1388392556.jpg",
+      "created": 1485691522000,
+      "___class": "browse",
+      "text": "Really good place to live in the skirts of Vitosha             Best Place to live in Mladost District             Really good complex in Strelbishte Region             Really Expensive Estate In the skirts of the Vitosha Mountain",
+      "title": "Title plamen",
+      "ownerId": null,
+      "user": "plamen",
+      "updated": 1485700854000,
+      "objectId": "1963921A-CACB-8DE4-FF5F-E00CD0B42200",
+      "__meta": "{\"relationRemovalIds\":{},\"selectedProperties\":[\"img\",\"created\",\"___class\",\"text\",\"title\",\"ownerId\",\"user\",\"updated\",\"objectId\"],\"relatedObjects\":{}}"
+    }
+  ],
+  "nextPage": null,
+  "totalObjects": 2
+}

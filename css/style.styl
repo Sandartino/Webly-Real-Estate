@@ -1,0 +1,248 @@
+html, body
+  width 100%
+  height 100%
+  margin 0
+  padding 0
+  overflow-x: hidden
+
+//change deafult grid
+@media (min-width: 1200px) {
+  .container {
+    width: 960px;
+  }
+}
+//tablet
+@media (max-width: 992px) {
+  #content .border-content {
+    background url('')
+  }
+  #multimedia-center a:nth-child(even){
+    display none
+  }
+}
+
+.carousel-control
+  width 0 !important
+
+//vij dali ti trqbva
+.inline-block
+  display inline-block !important
+
+.bg-header-main
+  background-image url('../imgs/header.jpg')
+  height 0
+  background-size 100%
+  padding-bottom: 25%
+
+.bg-header-second
+  background-image url('../imgs/header-second.jpg')
+  height 0
+  background-size 100%
+  padding-bottom 13%
+
+.flex-header
+  display flex
+  flex-direction row
+  justify-content space-between
+  margin-top 5px
+
+.main-nav
+  height 45px
+  border 1px solid black
+  border-radius 12px
+  background rgb(254, 254, 254)
+  background url(data:image/svg + xml)
+  background -moz-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(237, 237, 237, 1) 50%, rgba(219, 219, 219, 1) 51%, rgba(216, 216, 216, 1) 100%)
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(254, 254, 254, 1)), color-stop(50%, rgba(237, 237, 237, 1)), color-stop(51%, rgba(219, 219, 219, 1)), color-stop(100%, rgba(216, 216, 216, 1)))
+  background -webkit-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(237, 237, 237, 1) 50%, rgba(219, 219, 219, 1) 51%, rgba(216, 216, 216, 1) 100%)
+  background -o-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(237, 237, 237, 1) 50%, rgba(219, 219, 219, 1) 51%, rgba(216, 216, 216, 1) 100%)
+  background -ms-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(237, 237, 237, 1) 50%, rgba(219, 219, 219, 1) 51%, rgba(216, 216, 216, 1) 100%)
+  background linear-gradient(to bottom, rgba(254, 254, 254, 1) 0%, rgba(237, 237, 237, 1) 50%, rgba(219, 219, 219, 1) 51%, rgba(216, 216, 216, 1) 100%)
+  ul
+    margin-top 13px
+    margin-bottom 10px
+    padding-left 2rem
+    padding-right 2rem
+    font 13px 'Droid Sans', sans-serif
+    li
+      display inline
+      margin-left 5px
+      margin-right 5px
+      a
+        color black
+
+.grow
+  flex-grow 1
+  margin-top 2%
+
+.center
+  align-self center
+
+.btn-header
+  margin-top -20px
+
+.btn-header-first
+  margin-left 42%
+
+#header-content
+  .carousel-inner
+    text-align center
+    margin-top 3%
+    .item
+      p
+        &:nth-of-type(1)
+          font 3vw 'Goudy Bookletter 1911', serif
+          color #ffffff
+          text-shadow 1px 1px 1px rgba(0, 0, 0, 0.7)
+        &:nth-of-type(2)
+          font italic 1.8vw 'Georgia', serif
+          color #778292
+          text-shadow 1px 1px 1px rgba(0, 0, 0, 0.7)
+
+#header-text
+  font 3vw 'Goudy Bookletter 1911', serif
+  color #ffffff
+  text-shadow 1px 1px 1px rgba(0, 0, 0, 0.7)
+
+#header-text-sub
+  font italic 1.4vw 'Georgia', serif
+  color #778292
+  text-shadow 1px 1px 1px rgba(0, 0, 0, 0.7)
+
+//CONTENT
+.content-bg
+  background url(../imgs/content-bg.png) top right
+  border-top: 1px solid #ffffff;
+  -webkit-box-shadow: inset 0 58px 20px -55px rgba(0,0,0,0.40);
+  -moz-box-shadow: inset 0 58px 20px -55px rgba(0,0,0,0.40);
+  box-shadow: inset 0 58px 20px -55px rgba(0,0,0,0.40);
+  border-bottom 1px solid #e0e0e0
+
+#content
+  width 100%
+  //padding 13% 0 13% 0
+  h3
+    font 24px 'Goudy Bookletter 1911', serif
+    color #758b8d
+  img
+    float left
+    margin-right 12px
+  span
+    font 12px 'Droid Sans', sans-serif
+
+//proba
+#multimedia-container
+  display flex
+  //margin-top 30px
+  //margin-bottom 30px
+#multimedia-left
+  background url(../imgs/left-multimedia-bg.png) no-repeat
+  width 24px
+#multimedia-center
+  background url(../imgs/multimedia-bg.png) repeat-x
+  height 115px
+  width 100%
+  div
+    display flex
+    justify-content space-around
+    a
+      margin-top 16px
+      margin-left 10px
+#multimedia-right
+  background url(../imgs/right-multimedia-bg.png) no-repeat top right
+  width 24px
+
+
+#home-bottom-text
+  font 24px 'Goudy Bookletter 1911', serif
+  color #758b8d
+  text-align center
+  margin 8px 0 8px 0
+
+.readmore
+  background rgb(253, 253, 253)
+  background url(data:image/svg + xml)
+  background -moz-linear-gradient(top, rgba(253, 253, 253, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(242, 242, 242, 1) 51%, rgba(239, 239, 239, 1) 100%) /* FF3.6-15 */
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(253, 253, 253, 1)), color-stop(50%, rgba(247, 247, 247, 1)), color-stop(51%, rgba(242, 242, 242, 1)), color-stop(100%, rgba(239, 239, 239, 1))) /* Chrome4-9,Safari4-5 */
+  background -webkit-linear-gradient(top, rgba(253, 253, 253, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(242, 242, 242, 1) 51%, rgba(239, 239, 239, 1) 100%) /* Chrome10-25,Safari5.1-6 */
+  background -o-linear-gradient(top, rgba(253, 253, 253, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(242, 242, 242, 1) 51%, rgba(239, 239, 239, 1) 100%) /* Opera 11.10-11.50 */
+  background -ms-linear-gradient(top, rgba(253, 253, 253, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(242, 242, 242, 1) 51%, rgba(239, 239, 239, 1) 100%) /* IE10 preview */
+  background linear-gradient(to bottom, rgba(253, 253, 253, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(242, 242, 242, 1) 51%, rgba(239, 239, 239, 1) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: #7e9294;
+  font-size: 11px;
+  line-height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #EBEAEA;
+  border-bottom: 1px solid #CFCECE;
+  border-radius: 10px;
+  text-shadow: 1px 1px 1px #ffffff;
+  font-family: 'Droid Sans', Arial, sans-serif;
+  &:hover
+    text-decoration: none;
+
+p > .readmore
+  padding-top 6px
+  padding-bottom 6px
+  margin-left 20px
+  vertical-align middle
+
+//p>.readmore
+//  display: block;
+//  float: right;
+
+.border-content
+  background url(../imgs/border-content.png) repeat-y 75% 0
+
+//FOOTER
+#footer-top
+  background url(../imgs/footer.png) repeat-x
+  height 345px
+  background-color #151b26
+  h3
+    font 24px 'Goudy Bookletter 1911', serif
+    color #ffffff
+  #footer-logo
+    max-width 35%
+    & + span
+      font italic 11px 'Georgia', serif
+      color #ffffff
+      text-shadow 1px 1px 1px rgba(0, 0, 0, 0.7)
+  p img
+    float left
+    margin-right 12px
+  span, li a
+    font 12px 'Droid Sans', sans-serif
+    color #aebdd1
+  ul
+    list-style-type none
+    //bullets
+    li
+      &:before
+        content url(../imgs/bullets.png)
+        float left;
+        margin-left -10px
+
+  .section-2
+    ul
+      margin-left 115px
+    h3
+      margin-left 140px
+  .section-3
+    ul
+      margin-left 125px
+    h3
+      margin-left 150px
+
+.proba
+  border 1px solid lightgreen
+
+#footer-bottom
+  background-color #131a25
+  border-top 1px solid #2c333e
+  p
+    margin 20px 0 20px 0
+    color #aebdd1
+
+
+
