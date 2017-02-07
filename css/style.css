@@ -6,20 +6,51 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
-@media (min-width: 1200px) {
+@media (min-width: 990px) {
   .container {
     width: 960px;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
+  #header-content,
+  nav.center {
+    display: none;
+  }
+  div.flex-header {
+    display: block !important;
+  }
+  div.flex-header img {
+    max-width: 20%;
+  }
+  div.flex-header #m-nav {
+    display: inline-block;
+    float: right;
+    background-color: inherit;
+    border: none;
+  }
+  div.flex-header #m-nav #navbar {
+    position: absolute;
+    background-color: #fff;
+    z-index: 50;
+    right: 60px;
+    top: 10px;
+  }
+  .content-bg .header-buttons {
+    display: none;
+  }
+  .content-bg #content span {
+    font: large 'Droid Sans', sans-serif !important;
+  }
+  #multimedia-center a:nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 990px) {
   #content .border-content {
     background: url("");
   }
   #multimedia-center a:nth-child(even) {
     display: none;
-  }
-  #footer-top {
-    height: 345px !important;
   }
   #footer-top .container {
     padding-top: 0 !important;
@@ -35,12 +66,9 @@ body {
     padding-right: 10px;
     display: inline-block;
   }
-}
-.carousel-control {
-  width: 0 !important;
-}
-.inline-block {
-  display: inline-block !important;
+  #footer-bottom p {
+    float: none !important;
+  }
 }
 .bg-header-main {
   background-image: url("../imgs/header.jpg");
@@ -59,6 +87,13 @@ body {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 5px;
+}
+#m-nav {
+  display: none;
+  margin-top: -5px;
+}
+#m-nav div {
+  margin-top: -2px;
 }
 .main-nav {
   height: 45px;
@@ -95,11 +130,8 @@ body {
 .center {
   align-self: center;
 }
-.btn-header {
-  margin-top: -20px;
-}
-.btn-header-first {
-  margin-left: 42%;
+#header-content .carousel-control {
+  width: 0 !important;
 }
 #header-content .carousel-inner {
   text-align: center;
@@ -114,6 +146,12 @@ body {
   font: italic 1.8vw 'Georgia', serif;
   color: #778292;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+}
+#header-content a.left {
+  left: 10px;
+}
+#header-content a.right {
+  right: 10px;
 }
 #header-text {
   font: 3vw 'Goudy Bookletter 1911', serif;
@@ -132,6 +170,34 @@ body {
   -moz-box-shadow: inset 0 58px 20px -55px rgba(0,0,0,0.4);
   box-shadow: inset 0 58px 20px -55px rgba(0,0,0,0.4);
   border-bottom: 1px solid #e0e0e0;
+}
+.content-bg .header-buttons a {
+  margin-top: -22px;
+  color: #fff;
+  font: 26px 'Goudy Bookletter 1911', serif;
+  display: block;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  float: left;
+  line-height: 40px;
+  text-decoration: none;
+}
+.content-bg .header-buttons a:nth-of-type(1) {
+  margin-left: 35%;
+}
+.content-bg .header-buttons a:nth-of-type(2) {
+  padding-left: 8px;
+}
+.content-bg .header-buttons a span {
+  background: #70afb6;
+  background: -moz-linear-gradient(top, #70afb6 0%, #589198 48%, #589198 48%, #51878d 50%, #4b7b80 100%);
+  background: -webkit-linear-gradient(top, #70afb6 0%, #589198 48%, #589198 48%, #51878d 50%, #4b7b80 100%);
+  background: linear-gradient(to bottom, #70afb6 0%, #589198 48%, #589198 48%, #51878d 50%, #4b7b80 100%);
+  border: 1px solid #2c6b72;
+  border-radius: 7px;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0 3px 1px #888;
 }
 #content {
   width: 100%;
@@ -170,9 +236,13 @@ body {
 #multimedia-center div {
   display: flex;
   justify-content: space-around;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
 }
 #multimedia-center div a {
-  margin-top: 16px;
   margin-left: 10px;
 }
 #multimedia-right {
@@ -219,10 +289,6 @@ p > .readmore {
 }
 #footer-top {
   background: url("../imgs/footer.png") repeat-x;
-  height: 280px;
-}
-#footer-top .container {
-  padding-top: 20px;
 }
 #footer-top h3 {
   font: 24px 'Goudy Bookletter 1911', serif;
@@ -235,6 +301,9 @@ p > .readmore {
   font: italic 11px 'Georgia', serif;
   color: #fff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
+}
+#footer-top p {
+  margin-bottom: 20px;
 }
 #footer-top p img {
   float: left;

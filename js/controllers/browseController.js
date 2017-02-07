@@ -14,9 +14,9 @@ var browseController = (function () {
             .then(html => $('#content').html(html))
             .then(function () {
                 $('#bg-header').addClass('bg-header-second');
-                $('.btn-header,#home-bottom-text').hide();
+                $('.header-buttons,#home-bottom-text').hide();
                 textHeader('browse')
-            })
+            });
     }
 
     return bgHeader
