@@ -5,7 +5,7 @@ import {data}           from '../BaaS/data.js';
 var browseController = (function () {
     function bgHeader() {
         var obj;
-        data.browse()
+        data.offers()
             .then(function (res) {
                 obj = res;
                 return templateLoader.get('browse-content')
@@ -17,6 +17,7 @@ var browseController = (function () {
                 $('.header-buttons,#home-bottom-text').hide();
                 textHeader('browse')
             });
+
     }
 
     return bgHeader

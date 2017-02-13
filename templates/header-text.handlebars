@@ -1,4 +1,6 @@
 <span id="header-text">
-    {{browse.text}}
-    <p id="header-text-sub">{{browse.subText}}</p>
+    {{#each this}}
+        {{this.text}}
+        <p id="header-text-sub">{{this.subText}}</p>
+    {{/each}}
 </span>

@@ -9,6 +9,10 @@ var textHeader = (function () {
                 text:'Browse Category',
                 subText:'Category description'
             },
+            search: {
+                text: 'Search Category',
+                subText:'Category description'
+            },
             returnCategory(){
                 for (let prop in categoryList) {
                     if (categoryList[category] == categoryList[prop]) {

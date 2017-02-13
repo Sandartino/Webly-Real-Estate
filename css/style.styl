@@ -195,11 +195,19 @@ html, body
 
 #content
   width 100%
+  overflow hidden
+  .border-content
+    background-image: url(../imgs/border-content.png);
+    background-repeat: repeat-y;
+    background-position: right;
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
   .offer
-    padding-right 25px
+    margin 0
     &:last-child
       padding-bottom 20px
-
+    .text
+      margin-left 4px
   h3
     font 24px 'Goudy Bookletter 1911', serif
     color #758b8d
@@ -208,6 +216,10 @@ html, body
     margin-right 12px
   span
     font 12px 'Droid Sans', sans-serif
+  svg
+    g path, tspan
+      cursor pointer
+
 
 #multimedia-container
   display flex
@@ -271,8 +283,6 @@ p > .readmore
   margin-left 20px
   vertical-align middle
 
-.border-content
-  background url(../imgs/border-content.png) repeat-y 75% 0
 
 //FOOTER
 #footer-top

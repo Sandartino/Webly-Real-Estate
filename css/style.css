@@ -201,12 +201,23 @@ body {
 }
 #content {
   width: 100%;
+  overflow: hidden;
+}
+#content .border-content {
+  background-image: url("../imgs/border-content.png");
+  background-repeat: repeat-y;
+  background-position: right;
+  margin-bottom: -9999px;
+  padding-bottom: 9999px;
 }
 #content .offer {
-  padding-right: 25px;
+  margin: 0;
 }
 #content .offer:last-child {
   padding-bottom: 20px;
+}
+#content .offer .text {
+  margin-left: 4px;
 }
 #content h3 {
   font: 24px 'Goudy Bookletter 1911', serif;
@@ -218,6 +229,10 @@ body {
 }
 #content span {
   font: 12px 'Droid Sans', sans-serif;
+}
+#content svg g path,
+#content svg tspan {
+  cursor: pointer;
 }
 #multimedia-container {
   display: flex;
@@ -283,9 +298,6 @@ p > .readmore {
   padding-bottom: 6px;
   margin-left: 20px;
   vertical-align: middle;
-}
-.border-content {
-  background: url("../imgs/border-content.png") repeat-y 75% 0;
 }
 #footer-top {
   background: url("../imgs/footer.png") repeat-x;
