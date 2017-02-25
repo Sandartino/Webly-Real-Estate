@@ -20,19 +20,28 @@ var searchController = (function () {
                         .then(function (respond) {
                             respond.data.forEach(function (item, index) {
                                 for (var i = 0; i < searchFilter.region.length; i++) {
-                                    if (item.region == searchFilter.region[i]) {
+                                    if (item.region == searchFilter.region[i] && priceRange(item.price)) {
                                         obj.data.push(item)
                                     }
                                 }
+
                             });
                             return templateLoader.get('search-result')
                         })
                         .then(template => template(obj))
                         .then(function (html) {
-                            $('#result-search').html(html)
+                            $('#result-search').html(html);
                         })
                 })
             })
+    }
+
+    function priceRange(price) {
+        var inRange = false;
+        if (price >= searchFilter.price[0] &&  price <= searchFilter.price[1]) {
+            inRange = true;
+        }
+        return inRange
     }
 
     return search

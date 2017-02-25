@@ -121,6 +121,23 @@ html, body
       margin-right 5px
       a
         color black
+  #logout-menu
+    display none
+  #login-container, #register-container
+    display none
+    margin-top 20px
+    //margin-left 10px
+    a
+      background: #70afb6
+      background: -moz-linear-gradient(top, #70afb6 0%, #589198 48%, #589198 48%, #51878d 50%, #4b7b80 100%)
+      background: -webkit-linear-gradient(top, #70afb6 0%, #589198 48%, #589198 48%, #51878d 50%, #4b7b80 100%)
+      background: linear-gradient(to bottom, #70afb6 0%, #589198 48%, #589198 48%, #51878d 50%, #4b7b80 100%)
+      border 1px solid #2C6B72
+      border-radius 7px
+      height 50px
+      padding 5px
+      color white
+      font 15px 'Droid Sans', sans-serif
 
 .grow
   flex-grow 1
@@ -217,9 +234,15 @@ html, body
   span
     font 12px 'Droid Sans', sans-serif
   svg
+    margin-top 15px
     g path, tspan
       cursor pointer
-
+  span.irs-with-grid
+    margin-top 20px
+  p.region, p.irs-from-bind
+    margin-top 20px
+    span
+      font-size 18px
 
 #multimedia-container
   display flex

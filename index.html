@@ -11,7 +11,8 @@
     <script src="bower_components/handlebars/handlebars.min.js"></script>
 
     <!--tuk e rouiting lib-->
-    <script src="routie.min.js"></script>
+    <!--<script src="routie.min.js"></script>-->
+    <script src="path.min.js"></script>
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Goudy+Bookletter+1911" rel="stylesheet">
     <!--ion.slider-->
@@ -24,8 +25,9 @@
     <script>System.import('main')</script>
 </head>
 <body>
-
+<div id="alert_placeholder"></div>
 <div id="bg-header">
+
     <div class="container">
         <div class="row">
             <div class="flex-header">
@@ -33,16 +35,28 @@
                 <span class="grow" style="color:lightgray">Real Estate Agency</span>
                 <nav class="center main-nav">
                     <ul class="list-unstyled">
-                        <li><a href="./">Home</a></li>
-                        <li><a href="#search">Search</a></li>
-                        <li><a href="#browse">Browse</a></li>
+                        <li><a href="#/">Home</a></li>
+                        <li><a href="#/search">Search</a></li>
+                        <li><a href="#/browse">Browse</a></li>
                         <li><a href="">About</a></li>
-                        <li><a href="">FAQ</a></li>
                         <li><a href="">Support</a></li>
-                        <li><a href="">Login</a></li>
-                        <li><a href="">Join</a></li>
+                        <li id="login-menu"><a href="#/login">Login</a></li>
+                        <li id="register-menu"><a href="#/register">Register</a></li>
+                        <li id="logout-menu"><a href="#/logout">Logout</a></li>
                     </ul>
+                    <div id="register-container">
+                        <input id="register-email" type="email" placeholder="e-mail" size="18">
+                        <input id="register-pass" type="password" placeholder="password" size="18">
+                        <a id="register-btn" href="#">register</a>
+                    </div>
+                    <div id="login-container">
+                        <input id="login-email" type="email" placeholder="e-mail" size="18">
+                        <input id="login-pass" type="password" placeholder="password" size="18">
+                        <a id="login-btn" href="#">login</a>
+                    </div>
                 </nav>
+
+
                 <!--mobile nav-->
                 <nav id="m-nav" class="navbar navbar-default">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -58,10 +72,9 @@
                             <li><a href="#search">SEARCH</a></li>
                             <li><a href="#browse">BROWSE</a></li>
                             <li><a href="">ABOUT</a></li>
-                            <li><a href="">FAQ</a></li>
                             <li><a href="">SUPPORT</a></li>
                             <li><a href="">LOGIN</a></li>
-                            <li><a href="">JOIN</a></li>
+                            <li><a href="#register">REGISTER</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -85,7 +98,9 @@
         <div id="content"></div>
     </div>
 </div>
-<p id="home-bottom-text">We offer the highest quality and most advanced web design services anywhere <a href="" class="readmore">ReadMore</a></p>
+<p id="home-bottom-text">We offer the highest quality and most advanced web design services anywhere <a href=""
+                                                                                                        class="readmore">ReadMore</a>
+</p>
 
 <!--FOOTER-->
 <footer>

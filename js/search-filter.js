@@ -1,8 +1,8 @@
 var searchFilter = (function () {
     function searchFilter() {
         searchFilter.region = [];
-        searchFilter.price = [];
-        var region = $('.region'),
+        searchFilter.price = [1000, 50000];
+        var region = $('.region span'),
             $that, currentRegion, regionCollected, html, regexTest, id;
 
         //slider
@@ -11,8 +11,10 @@ var searchFilter = (function () {
             min: 1000,
             max: 50000,
             grid: true,
+            step: 100,
             force_edges: true
         });
+
 
         //2way-binding --> http://stackoverflow.com/
         (function ($) {
@@ -32,7 +34,7 @@ var searchFilter = (function () {
                 id = $that[0].innerHTML;
                 $that = $("path#" + `${id}`)
             }
-            
+
             var regionData = $that.data("region");
             currentRegion = new RegExp(regionData);
             html = region.html();
@@ -42,7 +44,7 @@ var searchFilter = (function () {
                 region.append(regionData + " ")
             } else {
                 html = html.replace(currentRegion, "");
-                region.html(html)
+                region.html(html);
                 searchFilter.region.splice($.inArray(regionData, searchFilter.region), 1);
                 return
             }
@@ -56,7 +58,9 @@ var searchFilter = (function () {
 
         //price
         $(".irs-single").on("change", function () {
-            $('span.irs-from-bind').html($(this).text())
+            $('p.irs-from-bind span').html($(this).text());
+            searchFilter.price[0] = +($('.irs-from').html().replace(/\s/g, ''));
+            searchFilter.price[1] = +($('.irs-to').html().replace(/\s/g, ''));
         });
 
     }

@@ -4,12 +4,17 @@
         <div class="row">
             <div class="col-md-6">
                 <h3>{{title}}</h3>
-                <p>posted by {{user}} si na data 2107</p>
+                <p>posted by <b>{{user}}</b> on 2107</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <img src={{img}}>
+                <figure>
+                    <img src={{img}}>
+                    <figcaption>Region: <b>{{region}}</b></figcaption>
+                    <figcaption>Price: <b>{{price}} </b>&#36;</figcaption>
+                </figure>
+
             </div>
             <div class="col-md-8">
                 <p class="text">{{text}}</p>

@@ -1,11 +1,6 @@
 var jsonRequester = (function () {
 
-    function send(method, url, options) {
-        options = options || {};
-        // headers is changed
-        var headers = options || {},
-            data = options.data || undefined;
-
+    function send(method, url, headers, data) {
         var promise = new Promise(function (resolve, reject) {
             $.ajax({
                 url: url,
@@ -26,12 +21,12 @@ var jsonRequester = (function () {
         return promise;
     }
 
-    function get(url, options) {
-        return send('GET', url, options);
+    function get(url, headers, data) {
+        return send('GET', url, headers, data);
     }
 
-    function post(url, options) {
-        return send('POST', url, options);
+    function post(url, headers, data) {
+        return send('POST', url, headers, data);
     }
 
     function put(url, options) {

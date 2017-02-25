@@ -1,14 +1,35 @@
 import {homeController} from  './js/controllers/homeController.js';
 import {searchController} from './js/controllers/searchController.js';
 import {browseController} from './js/controllers/browseController.js';
+import {userController} from './js/controllers/userController.js';
 
-var router = (function () {
+// iztegli routie.js
+//mahni "/" v index.html
+//     routie({
+//         '': homeController,
+//         'search': searchController,
+//         'browse': browseController,
+//         'register': userController.register,
+//         'login': userController.login,
+//         'logout': userController.logout
+//     })
 
-    routie({
-        '': homeController,
-        'search': searchController,
-        'browse': browseController
-    })
+(function () {
+    Path.map("#/").to(homeController);
+    Path.map("#/search").to(searchController);
+    Path.map("#/browse").to(browseController);
+    Path.map("#/register").to(userController.register);
+    Path.map("#/login").to(userController.login);
+    Path.map("#/logout").to(userController.logout);
 
-})();
-export {router}
+    Path.root("#/");
+    Path.listen();
+})()
+
+
+
+
+
+
+
+
