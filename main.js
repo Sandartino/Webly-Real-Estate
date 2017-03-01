@@ -20,8 +20,6 @@ import {offersController} from './js/controllers/offersController.js';
     Path.map("#/search").to(searchController);
     
     Path.map("#/addoffer").to(offersController);
-    // Path.map("#/addoffer/post").to(offersController.postOffer);
-    
     Path.map("#/browse").to(browseController);
     Path.map("#/register").to(userController.register);
     Path.map("#/login").to(userController.login);
