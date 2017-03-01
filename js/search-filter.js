@@ -16,7 +16,7 @@ var searchFilter = (function () {
         });
 
 
-        //2way-binding --> http://stackoverflow.com/
+        //2way-binding 
         (function ($) {
             var oldHtml = $.fn.html;
             $.fn.html = function () {

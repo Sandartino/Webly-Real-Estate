@@ -184,6 +184,9 @@ body {
   color: #778292;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
 }
+select:invalid {
+  color: #999;
+}
 .content-bg {
   background: url("../imgs/content-bg.png") top right;
   border-top: 1px solid #fff;

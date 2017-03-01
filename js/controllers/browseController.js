@@ -17,7 +17,6 @@ var browseController = (function () {
                 $('.header-buttons,#home-bottom-text').hide();
                 textHeader('browse')
             });
-
     }
 
     return bgHeader

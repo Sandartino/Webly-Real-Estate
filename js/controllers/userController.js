@@ -14,12 +14,12 @@ var userController = (function () {
     function register() {
         $('#register-btn').on('click', function () {
             var user = {
-                email: $('#register-email').val(),
-                password: $('#register-pass').val()
+                name: $('#register-name').val(),
+                password: $('#register-pass').val(),
             };
             data.register(user)
                 .then(function () {
-                    user.login = user.email;
+                    user.login = user.name;
                     data.login(user);
                     $('#register-container, #register-menu').toggle();
                     $('#logout-menu').css('display', 'inline');
@@ -35,10 +35,9 @@ var userController = (function () {
     }
 
     function login() {
-
         $('#login-btn').on('click', function () {
             var user = {
-                login: $('#login-email').val(),
+                login: $('#login-name').val(),
                 password: $('#login-pass').val()
             };
             data.login(user)
@@ -49,7 +48,6 @@ var userController = (function () {
                 })
                 .catch(function (err) {
                     alertCustom(JSON.parse(err.responseText).message, 'danger');
-                    console.log(err)
                 })
         });
     }
@@ -57,9 +55,9 @@ var userController = (function () {
     function logout() {
         data.logout()
             .then(function () {
-                $('#login-menu a').html('Login')
+                $('#login-menu a').html('Login');
                 $('#logout-menu, #register-menu').toggle();
-                $('#register-email, #register-pass').val('');
+                $('#register-name, #register-pass').val('');
                 //url refresh in case of multiple registrations in one browser session
                 window.location.href = "http://localhost:63342/Webly-Real-Estate/index.html#/";
                 location.reload();

@@ -17,6 +17,8 @@ var data = (function () {
     function login(user) {
         return jsonRequester.post(URL + 'users/login', HEADER, user)
             .then(function (res) {
+                login.ownerId = res.ownerId;
+                login.user = res.name;
                 sessionStorage.setItem(AUTH_TOKEN, res["user-token"])
             })
     }
@@ -32,16 +34,26 @@ var data = (function () {
         return jsonRequester.get(URL + 'users/isvalidusertoken/' + authToken, HEADER)
     }
 
+    function addOffer(offer) {
+        return jsonRequester.post(URL + 'data/offers', HEADER, offer)
+    }
+
+    function offersByOwner() {
+        var ownerId =`'${login.ownerId}'`;
+        return jsonRequester.get(URL + 'data/offers?where=' + encodeURIComponent("ownerId=" + ownerId), HEADER)
+    }
+    
     function offers() {
         return jsonRequester.get(URL + 'data/offers', HEADER)
     }
-
 
     return {
         register,
         login,
         logout,
         isLogged,
+        addOffer,
+        offersByOwner,
         offers
     }
 

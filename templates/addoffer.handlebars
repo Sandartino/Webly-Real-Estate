@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-6 border-content">
+
+
+        <form>
+            <div class="form-group">
+                <!--<label for="title">Title</label>-->
+                <input type="text" class="form-control" id="title" placeholder="Title">
+            </div>
+
+            <div class="form-group">
+                <!--<label for="price">Price</label>-->
+                <input type="text" class="form-control" id="price" placeholder="Price">
+            </div>
+            <div class="form-group">
+                <!--<label for="img-utl">Img URL</label>-->
+                <input type="url" class="form-control" id="img-url" placeholder="Img URL">
+            </div>
+            <div class="form-group">
+                <!--<label for="sel1">Regions</label>-->
+                <select class="form-control" id="select" required>
+                    <option value="" disabled selected hidden>Region</option>
+                    <option value="Sofia">Sofia</option>
+                    <option value="Burgas">Burgas</option>
+                    <option value="Varna">Varna</option>
+                    <option value="Vidin">Vidin</option>
+                    <option value="Plovdiv">Plovdiv</option>
+                    <option value="Pleven">Pleven</option>
+                    <option value="Razgrad">Razgrad</option>
+                    <option value="Haskovo">Haskovo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <!--<label for="textarea">Text</label>-->
+                <textarea class="form-control" rows="5" id="textarea"></textarea>
+            </div>
+
+            <a id="addOffer-btn" class="btn btn-default" type="submit" >Submit</a>
+        </form>
+
+
+
+    </div>
+
+
+    <div class="col-md-6">
+        <div id="right-section">
+            <p><b>{{user}}</b> you have {{totalObjects}} offers</p>
+            {{#each data}}
+                <p>{{text}}</p>
+            {{/each}}
+        </div>
+    </div>
+</div>

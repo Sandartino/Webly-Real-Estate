@@ -10,8 +10,8 @@ var searchController = (function () {
             .then(function () {
                 $('#bg-header').addClass('bg-header-second');
                 $('.header-buttons, #home-bottom-text').hide();
-                textHeader('search')
-                searchFilter()
+                textHeader('search');
+                searchFilter();
             })
             .then(function () {
                 $('#btn-search').on('click', function () {
@@ -30,7 +30,7 @@ var searchController = (function () {
                         })
                         .then(template => template(obj))
                         .then(function (html) {
-                            $('#result-search').html(html);
+                            $('#right-section').html(html);
                         })
                 })
             })
