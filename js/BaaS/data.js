@@ -39,12 +39,20 @@ var data = (function () {
     }
 
     function offersByOwner() {
-        var ownerId =`'${login.ownerId}'`;
+        var ownerId = `'${login.ownerId}'`;
         return jsonRequester.get(URL + 'data/offers?where=' + encodeURIComponent("ownerId=" + ownerId), HEADER)
     }
-    
+
     function offers() {
-        return jsonRequester.get(URL + 'data/offers', HEADER)
+        return jsonRequester.get(URL + 'data/offers?loadRelations=comments', HEADER)
+    }
+
+    function postComment(comment) {
+        return jsonRequester.put(URL + 'data/offers', HEADER, comment)
+    }
+
+    function offerById(offerId) {
+        return jsonRequester.get(URL + 'data/offers/' + offerId + '?loadRelations=comments', HEADER)
     }
 
     return {
@@ -54,7 +62,9 @@ var data = (function () {
         isLogged,
         addOffer,
         offersByOwner,
-        offers
+        offers,
+        postComment,
+        offerById
     }
 
 })();

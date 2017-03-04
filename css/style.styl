@@ -45,7 +45,7 @@ html, body
 //tablet
 @media (max-width: 990px)
   #content
-    .border-content
+    #left-section
       background url("")
 
   #multimedia-center
@@ -216,18 +216,42 @@ select
 #content
   width 100%
   overflow hidden
-  .border-content
+  color #8c8a8a
+  .main-row
+    min-height 580px
+  #left-section
     background-image: url(../imgs/border-content.png);
     background-repeat: repeat-y;
     background-position: right;
     margin-bottom: -9999px;
     padding-bottom: 9999px;
+    #comments-list
+      margin-top 25px
+      ul
+        list-style-type:none;
+        li
+          background-color white
+          border-radius 10px
+          padding 10px
+          b
+            font 24px 'Goudy Bookletter 1911', serif
+            color #565656
+          span
+            font 18px 'Goudy Bookletter 1911', serif
+            color #b6b5b5
+          p
+            font 14px 'Goudy Bookletter 1911', serif
+
   .offer
     margin 0
     &:last-child
       padding-bottom 20px
     .text
       margin-left 4px
+    #count-comments
+      a
+        color #8c8a8a
+        text-decoration underline
   h3
     font 24px 'Goudy Bookletter 1911', serif
     color #758b8d
@@ -246,6 +270,32 @@ select
     margin-top 20px
     span
       font-size 18px
+//add offer
+  form
+    margin-top 30px
+  #user-offers
+    ul
+      list-style-type none
+      -webkit-padding-start: 0;
+      -moz-padding-start: 0;
+      -ms-padding-start: 0;
+      //bullets
+      li
+        a
+          color #8c8a8a
+          font 12px 'Droid Sans', sans-serif
+        &:before
+          content url(../imgs/bullets.png)
+          //float left;
+          //margin-left -10px
+//comments
+  textarea
+    display none
+
+
+
+
+
 
 #multimedia-container
   display flex

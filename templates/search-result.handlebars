@@ -13,6 +13,7 @@
                     <img src={{img}}>
                     <figcaption>Region: <b>{{region}}</b></figcaption>
                     <figcaption>Price: <b>{{price}} </b>&#36;</figcaption>
+                    <figcaption id="count-comments" data-object-id="{{objectId}}"><a href="#/search">Comments: <b>{{comments.length}}</b></a></figcaption>
                 </figure>
 
             </div>
@@ -20,7 +21,9 @@
                 <p class="text">{{text}}</p>
             </div>
         </div>
-        <button class="btn btn-default pull-right">More</button>
+        <a id="comment-btn" data-object-id="{{objectId}}" class="btn btn-default pull-right">Comment</a>
+        <textarea cols="45" rows="7"></textarea>
+
     </div>
 
 

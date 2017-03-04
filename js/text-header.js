@@ -6,12 +6,16 @@ var textHeader = (function () {
         var categoryObj = {};
         var categoryList = {
             browse: {
-                text:'Browse Category',
-                subText:'Category description'
+                text: 'Browse Category',
+                subText: 'Category description'
             },
             search: {
                 text: 'Search Category',
-                subText:'Category description'
+                subText: 'Category description'
+            },
+            addoffer: {
+                text: 'Add Offer Category',
+                subText: 'Category description'
             },
             returnCategory(){
                 for (let prop in categoryList) {

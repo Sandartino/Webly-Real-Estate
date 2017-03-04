@@ -4,6 +4,7 @@ import {data} from '../BaaS/data.js'
 var homeController = (function () {
 
     function bgHeader() {
+        $('.header-buttons, #home-bottom-text').toggle(true);
         $('#bg-header').addClass('bg-header-main').removeClass('bg-header-second');
         templateLoader.get('carousel')
             .then((html) => $('#header-content').html(html));

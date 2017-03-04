@@ -29,8 +29,8 @@ var jsonRequester = (function () {
         return send('POST', url, headers, data);
     }
 
-    function put(url, options) {
-        return send('PUT', url, options);
+    function put(url, options, data) {
+        return send('PUT', url, options, data);
     }
 
     function del(url, options) {

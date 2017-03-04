@@ -1,12 +1,9 @@
 import {data} from '../BaaS/data.js'
 import {templateLoader} from '../template-loader.js';
 import {alertCustom} from '../alert.js'
-
+import {textHeader}     from '../text-header.js';
 
 var offersController = (function () {
-    //The function ensure dynamic changing content with one handlebars template unlike search() in searchController which uses two
-    //This causes lost of click-event on #addOffer-btn in case of more than one post
-    //Recursion handle this but event delegation is used
     function offers() {
         var ownerId = data.login.ownerId;
         var user = data.login.user;
@@ -23,6 +20,11 @@ var offersController = (function () {
                             templateLoader.get('addoffer')
                                 .then(function (template) {
                                     $('#content').html(template(obj));
+                                    $('#bg-header').addClass('bg-header-second');
+                                    $('.header-buttons, #home-bottom-text').hide();
+
+                                    textHeader('addoffer');
+
                                     $('#content').on('click', 'form #addOffer-btn', function () {
                                         var offer = {
                                             title: $('#title').val(),
@@ -51,14 +53,12 @@ var offersController = (function () {
                     alertCustom('Login required', 'danger')
                 }
             })
-
-
     }
 
     return offers
 })();
 export {offersController}
-// encodeURIComponent("region='Burgas'")
+
 
 
 
