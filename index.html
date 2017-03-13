@@ -9,16 +9,14 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="bower_components/handlebars/handlebars.min.js"></script>
-
-    <!--tuk e rouiting lib-->
-    <!--<script src="routie.min.js"></script>-->
-    <script src="path.min.js"></script>
+    <script src="bower_components/routie/dist/routie.min.js"></script>
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Goudy+Bookletter+1911" rel="stylesheet">
     <!--ion.slider-->
     <script src="bower_components/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
     <link rel="stylesheet" href="bower_components/ion.rangeSlider/css/ion.rangeSlider.css">
-    <link rel="stylesheet" href="bower_components/ion.rangeSlider/css/ion.rangeSlider.skinHTML5.css">
+    <link rel="stylesheet" href="bower_components/ion.rangeSlider/css/ion.rangeSlider.skinNice.css">
+    <link href="imgs/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <script src="node_modules/systemjs/dist/system.js"></script>
     <script src="js/system-config.js"></script>
@@ -31,31 +29,29 @@
     <div class="container">
         <div class="row">
             <div class="flex-header">
-                <img src="imgs/logo.png" alt="">
+                <a href="#"><img src="imgs/logo.png" alt=""></a>
                 <span class="grow" style="color:lightgray">Real Estate Agency</span>
                 <nav class="center main-nav">
                     <ul class="list-unstyled">
-                        <li><a href="#/">Home</a></li>
-                        <li><a href="#/search">Search</a></li>
-                        <li id="addoffer"><a href="#/addoffer">Add offer</a></li>
-                        <li><a href="#/browse">Browse</a></li>
-                        <li><a href="">Support</a></li>
-                        <li id="login-menu"><a href="#/login">Login</a></li>
-                        <li id="register-menu"><a href="#/register">Register</a></li>
-                        <li id="logout-menu"><a href="#/logout">Logout</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#search">Search</a></li>
+                        <li><a href="#addoffer">Add offer</a></li>
+                        <li><a>Browse</a></li>
+                        <li id="login-menu"><a href="#login">Login</a></li>
+                        <li id="register-menu"><a href="#register">Register</a></li>
+                        <li id="logout-menu"><a href="#logout">Logout</a></li>
                     </ul>
                     <div id="register-container">
-                        <input id="register-name" type="text" placeholder="nickname" size="18">
-                        <input id="register-pass" type="password" placeholder="password" size="18">
+                        <input id="register-name" type="text" placeholder="nickname" size="16">
+                        <input id="register-pass" type="password" placeholder="password" size="16">
                         <a id="register-btn" href="#">register</a>
                     </div>
                     <div id="login-container">
-                        <input id="login-name" type="text" placeholder="nickname" size="18">
-                        <input id="login-pass" type="password" placeholder="password" size="18">
+                        <input id="login-name" type="text" placeholder="nickname" size="17">
+                        <input id="login-pass" type="password" placeholder="password" size="17">
                         <a id="login-btn" href="#">login</a>
                     </div>
                 </nav>
-
 
                 <!--mobile nav-->
                 <nav id="m-nav" class="navbar navbar-default">
@@ -68,19 +64,16 @@
                     </button>
                     <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
                         <ul class="nav navbar-nav">
-                            <li><a href="#/">HOME</a></li>
-                            <li><a href="#/search">SEARCH</a></li>
-                            <li><a href="#/addoffer">ADD OFFER</a></li>
-                            <li><a href="#/browse">BROWSE</a></li>
-                            <li><a href="">SUPPORT</a></li>
-                            <li><a href="">LOGIN</a></li>
-                            <li><a href="#/register">REGISTER</a></li>
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#search">SEARCH</a></li>
+                            <li><a href="#addoffer">ADD OFFER</a></li>
+                            <li><a>BROWSE</a></li>
+                            <li id="login-menu-m"><a href="#login">LOGIN</a></li>
+                            <li><a href="#register">REGISTER</a></li>
                         </ul>
                     </div>
                 </nav>
-
             </div>
-
         </div>
         <div class="row">
             <div id="header-content"></div>
@@ -91,15 +84,15 @@
 <!--BODY-->
 <div class="container-fluid content-bg">
     <div class="row header-buttons">
-        <a href=""><span>View Offers!</span></a>
-        <a href=""><span>Sign Up Now</span></a>
+        <a><span>View Offers!</span></a>
+        <a><span>Sign Up Now</span></a>
     </div>
     <div class="container">
         <div id="content"></div>
     </div>
 </div>
-<p id="home-bottom-text">We offer the highest quality and most advanced web design services anywhere <a href=""
-                                                                                                        class="readmore">ReadMore</a>
+<!--<p id="home-bottom-text">We offer the highest quality and most advanced web design services anywhere <a class="webly-btn">ReadMore</a>-->
+<p id="home-bottom-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam ac nisl metus <a class="webly-btn">ReadMore</a>
 </p>
 
 <!--FOOTER-->
@@ -112,33 +105,29 @@
                         <h3><img id="footer-logo" src="imgs/logo.png" alt=""><span>&#169; 2017 Apostolov</span></h3>
                         <p>
                             <img src="https://placehold.it/66x66" alt="">
-                            <span>
-                                We offer our clients the best Real Estate offers in Bulgaria. On our website you can find
-                            beautiful houses, apartments and everything you need if you are looking for a new place to live.
-                            Our Website gathers offers from all over Bulgaria but we plan.
-                            </span>
+                            <span>Lorem ipsum dolor sit amet, leo consectetur adipiscing elit. Etiam ac nisl ut metus mollis sollicitudin efficitur ac justo. Integer laoreet, metus ac rutrum faucibus, sapien nunc posuere nibh, sed gravida nunc leo ut sem. Nulla faucibus egestas</span>
                         </p>
                     </section>
                     <section class="col-md-4 section-2">
-                        <h3>Who We Are</h3>
+                        <h3>Title Text</h3>
                         <ul>
-                            <li><a href="">Tova e list Tova e list</a></li>
-                            <li><a href="">Tova e list Tova e list</a></li>
-                            <li><a href="">Tova e list Tova e list</a></li>
-                            <li><a href="">Tova e list Tova e list</a></li>
-                            <li><a href="">Tova e list Tova e list</a></li>
-                            <li><a href="">Tova e list Tova e list</a></li>
+                            <li><a>Place for navigation link</a></li>
+                            <li><a>Place for navigation link</a></li>
+                            <li><a>Place for navigation link</a></li>
+                            <li><a>Place for navigation link</a></li>
+                            <li><a>Place for navigation link</a></li>
+                            <li><a>Place for navigation link</a></li>
                         </ul>
                     </section>
                     <section class="col-md-4 section-3">
-                        <h3>Who We Are</h3>
+                        <h3>Title Text</h3>
                         <ul>
-                            <li><a href="">Tova e list Tova e list</a></li>
-                            <li><a href="">Tova e list Tova e list</a></li>
-                            <li><a href="">Tova e list Tova e list</a></li>
-                            <li><a href="">Tova e list Tova e list</a></li>
-                            <li><a href="">Tova e list Tova e list</a></li>
-                            <li><a href="">Tova e list Tova e list</a></li>
+                            <li><a>Place for navigation link</a></li>
+                            <li><a>Place for navigation link</a></li>
+                            <li><a>Place for navigation link</a></li>
+                            <li><a>Place for navigation link</a></li>
+                            <li><a>Place for navigation link</a></li>
+                            <li><a>Place for navigation link</a></li>
                         </ul>
                     </section>
                 </article>
@@ -152,17 +141,16 @@
                 <p></p>
                 <div class="col-md-6">
                     <ul class="list-inline">
-                        <li>home</li>
-                        <li>home</li>
-                        <li>home</li>
-                        <li>home</li>
-                        <li>home</li>
+                        <li>Link</li>
+                        <li>Link</li>
+                        <li>Link</li>
+                        <li>Link</li>
+                        <li>Link</li>
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <p class="pull-right">Designed by Elegant WordPress Themes</p>
                 </div>
-
             </div>
         </div>
     </div>

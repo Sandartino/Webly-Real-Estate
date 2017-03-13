@@ -6,7 +6,7 @@ var userController = (function () {
         $('#register-container').toggle();
         $('#login-container').toggle(false)
     });
-    $('#login-menu').on('click', function () {
+    $('#login-menu, #login-menu-m').on('click', function () {
         $('#login-container').toggle();
         $('#register-container').toggle(false);
     });
@@ -15,7 +15,7 @@ var userController = (function () {
         $('#register-btn').on('click', function () {
             var user = {
                 name: $('#register-name').val(),
-                password: $('#register-pass').val(),
+                password: $('#register-pass').val()
             };
             data.register(user)
                 .then(function () {
@@ -59,8 +59,7 @@ var userController = (function () {
                 $('#logout-menu, #register-menu').toggle();
                 $('#register-name, #register-pass').val('');
                 //url refresh in case of multiple registrations in one browser session
-                window.location.href = "http://localhost:63342/Webly-Real-Estate/index.html#/";
-                location.reload();
+                window.location.href = "http://localhost:63342/Webly-Real-Estate/index.html";
             })
     }
 

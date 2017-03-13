@@ -1,10 +1,15 @@
 {{#each comments}}
-    <ul>
-        <li>
-            <b>{{user}} </b><span>| {{formatDate created}}</span>
-            <p>{{text}}</p>
-        </li>
-    </ul>
+
+    <section>
+        <b>{{user}} </b><span>| {{formatDate created}}</span>
+        <p>{{text}}</p>
+    </section>
+    </br>
+
 {{/each}}
-<a id="back-btn" href="#/search" class="btn btn-default"> >>> </a>
+
+<a id="back-btn" href="#search" class="btn btn-default"> >>> </a>
+
+
+
 

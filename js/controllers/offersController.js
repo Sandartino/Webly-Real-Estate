@@ -5,8 +5,9 @@ import {textHeader}     from '../text-header.js';
 
 var offersController = (function () {
     function offers() {
-        var ownerId = data.login.ownerId;
-        var user = data.login.user;
+        var ownerId = data.login.ownerId,
+            user = data.login.user,
+            validOffer = false;
         data.isLogged()
             .then(function (logged) {
                 if (logged) {
@@ -14,7 +15,7 @@ var offersController = (function () {
                         .then(function (obj) {
                             obj.ownerId = ownerId;
                             obj.user = user;
-                            return obj
+                            return obj;
                         })
                         .then(function (obj) {
                             templateLoader.get('addoffer')
@@ -35,17 +36,24 @@ var offersController = (function () {
                                             ownerId: obj.ownerId,
                                             user: obj.user
                                         };
-                                        data.addOffer(offer)
-                                            .then(function (res) {
-                                                obj.totalObjects += 1;
-                                                obj.data.push(res);
-                                                templateLoader.get('addoffer')
-                                                    .then(function (template) {
-                                                        $('#content').html(template(obj));
-                                                        //recursion
-                                                        // offers()
-                                                    })
-                                            })
+
+                                        validOffer = validateOffer(offer);
+
+                                        if (validOffer) {
+                                            data.addOffer(offer)
+                                                .then(function (res) {
+                                                    obj.totalObjects += 1;
+                                                    obj.data.push(res);
+                                                    templateLoader.get('addoffer')
+                                                        .then(function (template) {
+                                                            $('#content').html(template(obj));
+                                                        })
+                                                })
+                                                .catch(function (err) {
+                                                    alertCustom('Invalid property', 'danger');
+                                                    console.log(JSON.parse(err.responseText).message);
+                                                })
+                                        }
                                     })
                                 })
                         })
@@ -53,6 +61,22 @@ var offersController = (function () {
                     alertCustom('Login required', 'danger')
                 }
             })
+    }
+
+    //validator client side
+    function validateOffer(offer) {
+        if (offer.img.length == 0) {
+            offer.img = "https://placehold.it/150x150";
+        }
+        if (offer.price < 1000 || offer.price > 50000) {
+            alertCustom('Price must be 1000-50000', 'danger');
+            return false
+        }
+        if (offer.region === null) {
+            alertCustom('Property region is empty', 'danger');
+            return false
+        }
+        return true
     }
 
     return offers

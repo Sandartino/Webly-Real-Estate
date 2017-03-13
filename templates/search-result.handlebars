@@ -2,18 +2,23 @@
 
     <div class="row offer">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <h3>{{title}}</h3>
-                <p>posted by <b>{{user}}</b> on 2107</p>
+                <p>
+                    Posted by <span>{{user}}</span>
+                    on {{formatDate created}} |
+                    <span id="count-comments" data-object-id="{{objectId}}">
+                        <a href="#search">comments: <span>{{comments.length}}</span></a>
+                    </span>
+                </p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <figure>
-                    <img src={{img}}>
-                    <figcaption>Region: <b>{{region}}</b></figcaption>
-                    <figcaption>Price: <b>{{price}} </b>&#36;</figcaption>
-                    <figcaption id="count-comments" data-object-id="{{objectId}}"><a href="#/search">Comments: <b>{{comments.length}}</b></a></figcaption>
+                    <img class="offer-img" src={{img}}>
+                    <figcaption>Region: <span>{{region}}</span></figcaption>
+                    <figcaption>Price: <span>{{price}} &#36;</span></figcaption>
                 </figure>
 
             </div>
@@ -21,10 +26,13 @@
                 <p class="text">{{text}}</p>
             </div>
         </div>
-        <a id="comment-btn" data-object-id="{{objectId}}" class="btn btn-default pull-right">Comment</a>
+        <a id="comment-btn" href="#search" data-object-id="{{objectId}}" class="webly-btn pull-right">Comment</a>
         <textarea cols="45" rows="7"></textarea>
-
     </div>
 
-
 {{/each}}
+
+<!--PAGINATION-->
+<div class="pagination">
+
+</div>

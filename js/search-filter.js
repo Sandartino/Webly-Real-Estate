@@ -5,7 +5,7 @@ var searchFilter = (function () {
         var region = $('.region span'),
             $that, currentRegion, regionCollected, html, regexTest, id;
 
-        //slider
+        //slider plugin
         $("#slider_id").ionRangeSlider({
             type: "double",
             min: 1000,
@@ -14,7 +14,6 @@ var searchFilter = (function () {
             step: 100,
             force_edges: true
         });
-
 
         //2way-binding 
         (function ($) {
@@ -26,13 +25,15 @@ var searchFilter = (function () {
             };
         })(jQuery);
 
-        //regions
+        //get regions
         $("path, tspan").on('click', function () {
             $that = $(this);
-
+            $that.css('fill', '#999999');
             if ($that[0].nodeName == "tspan") {
                 id = $that[0].innerHTML;
-                $that = $("path#" + `${id}`)
+                $that.css('fill', 'inherit');
+                $that = $("path#" + `${id}`);
+                $that.css('fill', '#999999')
             }
 
             var regionData = $that.data("region");
@@ -45,6 +46,7 @@ var searchFilter = (function () {
             } else {
                 html = html.replace(currentRegion, "");
                 region.html(html);
+                $that.css('fill', 'inherit');
                 searchFilter.region.splice($.inArray(regionData, searchFilter.region), 1);
                 return
             }
@@ -66,7 +68,6 @@ var searchFilter = (function () {
     }
 
     return searchFilter
-
 })();
 export {searchFilter}
 

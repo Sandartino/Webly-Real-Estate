@@ -1,8 +1,9 @@
 import {templateLoader} from '../template-loader.js';
 import {textHeader}     from '../text-header.js';
 import {data}           from '../BaaS/data.js';
-import {searchFilter}   from '../search-filter.js'
-import {comments}       from '../comments.js'
+import {searchFilter}   from '../search-filter.js';
+import {comments}       from '../comments.js';
+import 'pagination';
 
 var searchController = (function () {
     function search() {
@@ -15,8 +16,7 @@ var searchController = (function () {
                 textHeader('search');
                 searchFilter();
             });
-
-
+        
         $('#content').on('click', '#left-section #search-btn', function () {
             var obj = {data: []};
             data.offers()
@@ -36,6 +36,14 @@ var searchController = (function () {
                     comments.get();
                     comments.post();
                 })
+                .then(function () {
+                    // pagination
+                    $(".pagination").customPaginate({
+                        itemsToPaginate : ".offer",
+                        activeClass : "active-class"
+
+                    });
+                })
         })
 
     }
@@ -50,5 +58,5 @@ var searchController = (function () {
 
     return search
 
-})()
+})();
 export {searchController}

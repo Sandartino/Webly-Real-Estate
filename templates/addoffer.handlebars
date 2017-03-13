@@ -1,7 +1,5 @@
 <div class="row main-row">
     <div id="left-section" class="col-md-6 ">
-
-
         <form>
             <div class="form-group">
                 <!--<label for="title">Title</label>-->
@@ -10,11 +8,11 @@
 
             <div class="form-group">
                 <!--<label for="price">Price</label>-->
-                <input type="text" class="form-control" id="price" placeholder="Price">
+                <input type="text" class="form-control" id="price" placeholder="1000 - 50000">
             </div>
             <div class="form-group">
                 <!--<label for="img-utl">Img URL</label>-->
-                <input type="url" class="form-control" id="img-url" placeholder="Img URL">
+                <input type="url" class="form-control" id="img-url" placeholder="empty or img url">
             </div>
             <div class="form-group">
                 <!--<label for="sel1">Regions</label>-->
@@ -34,20 +32,16 @@
                 <!--<label for="textarea">Text</label>-->
                 <textarea class="form-control" rows="5" id="textarea"></textarea>
             </div>
-
-            <a id="addOffer-btn" class="btn btn-default" type="submit">Submit</a>
+            <a id="addOffer-btn" href="#addoffer" class="webly-btn">Post</a>
         </form>
-
-
     </div>
-
 
     <div id="right-section" class="col-md-6">
         <div id="user-offers">
-            <h3>{{user}} you have {{totalObjects}} offers</h3>
+            <h3>{{user}} you have <span>{{totalObjects}}</span> offers</h3>
             <ul>
                 {{#each data}}
-                    <li><a href="">{{text}}</a></li>
+                    <li><span>{{title}}</span></li>
                 {{/each}}
             </ul>
         </div>

@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "handlebars": "^4.0.5",
-    "ion.rangeSlider": "ionrangeslider#^2.1.6"
+    "ion.rangeSlider": "ionrangeslider#^2.1.6",
+    "routie": "^0.3.2"
   }
 }

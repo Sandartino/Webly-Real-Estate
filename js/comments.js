@@ -1,6 +1,6 @@
 import {data} from './BaaS/data.js';
 import {templateLoader} from './template-loader.js';
-import {dateTime} from './datetime.js';
+import 'datetime';
 
 var comments = (function () {
     var text, objectId, user, comment, parent, $that, commentCount;
@@ -36,9 +36,9 @@ var comments = (function () {
                                 commentCount = $.grep(res.data, function (e) {
                                     return e.objectId == objectId;
                                 });
-                                $that.prev()
-                                    .find('figcaption#count-comments a')
-                                    .html('Comments: ' + '<b>' + commentCount[0].comments.length + '</b>')
+                                $that.parent()
+                                    .find('span#count-comments a span')
+                                    .html(commentCount[0].comments.length)
                             })
                     })
             }
@@ -47,14 +47,15 @@ var comments = (function () {
     }
 
     function get() {
-        $('#right-section').on('click', 'figure #count-comments', function () {
+        $('#right-section').on('click', 'p #count-comments', function () {
             objectId = $(this).data("object-id");
             data.offerById(objectId)
-                .then(function (res) {
+                .then(function (data) {
+                    sortComments(data);
                     templateLoader.get('comments-list')
                         .then(function (template) {
                             $('#svg-map').toggle(false);
-                            $('#comments-list').html(template(res));
+                            $('#comments-list').html(template(data));
                             $('.main-row').on('click', '#left-section #back-btn', function () {
                                 $('#svg-map').toggle(true);
                                 $('#comments-list').empty();
@@ -64,6 +65,11 @@ var comments = (function () {
         })
     }
 
+    function sortComments(data){
+        data.comments.sort(function(a, b) {
+            return b.created - a.created;
+        });
+    }
 
     return {
         post,

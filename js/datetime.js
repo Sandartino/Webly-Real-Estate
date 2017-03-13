@@ -1,5 +1,6 @@
-var dateTime = (function () {
-   return Handlebars.registerHelper("formatDate", function(milliseconds) {
+(function () {
+
+    Handlebars.registerHelper("formatDate", function (milliseconds) {
         var date = new Date(milliseconds),
             day = date.getDate(),
             year = date.getFullYear(),
@@ -46,5 +47,8 @@ var dateTime = (function () {
 
         return milliseconds = month + ' ' + day + ', ' + year;
     });
+    
 })();
-export {dateTime}
+
+    
+

@@ -5,73 +5,6 @@ html, body
   padding 0
   overflow-x: hidden
 
-//change deafult grid
-@media (min-width: 990px)
-  .container
-    width 960px
-
-//mobile
-@media (max-width: 768px)
-  #header-content, nav.center
-    display none
-
-  div.flex-header
-    display block !important
-    img
-      max-width 20%
-    #m-nav
-      display inline-block
-      float right
-      background-color inherit
-      border none
-      #navbar
-        position absolute
-        background-color white
-        z-index 50
-        right 60px
-        top 10px
-
-  .content-bg
-    .header-buttons
-      display none
-    #content span
-      font large 'Droid Sans', sans-serif !important
-
-  #multimedia-center
-    a
-      &:nth-child(3)
-        display none
-
-//tablet
-@media (max-width: 990px)
-  #content
-    #left-section
-      background url("")
-
-  #multimedia-center
-    a
-      &:nth-child(even)
-        display none
-
-  #footer-top
-    .container
-      padding-top 0 !important
-    section
-      h3, ul
-        margin-left 0 !important
-    section
-      &:first-child
-        h3
-          margin-top 6px
-    ul
-      li
-        padding-right 10px
-        display inline-block
-  #footer-bottom
-    p
-      float none !important
-
-
 //HEADER
 .bg-header-main
   background-image url('../imgs/header.jpg')
@@ -181,6 +114,7 @@ html, body
 select
   &:invalid
     color: #999999
+
 .content-bg
   background url(../imgs/content-bg.png) top right
   border-top: 1px solid #ffffff;
@@ -198,7 +132,7 @@ select
     line-height 40px
     text-decoration: none
     &:nth-of-type(1)
-      margin-left 35%
+      margin-left 35.5%
     &:nth-of-type(2)
       padding-left 8px
     span
@@ -217,85 +151,118 @@ select
   width 100%
   overflow hidden
   color #8c8a8a
+  article
+    section p img
+      float left
+      margin-top 5px
+      margin-right 12px
   .main-row
     min-height 580px
+    svg
+      margin-top 15px
+      g path, tspan
+        cursor pointer
   #left-section
     background-image: url(../imgs/border-content.png);
     background-repeat: repeat-y;
     background-position: right;
     margin-bottom: -9999px;
     padding-bottom: 9999px;
+    #search-btn
+      display block
+      margin-top 20px
+      width 54px;
+    #addOffer-btn
+      display block
+      width 49px;
     #comments-list
       margin-top 25px
-      ul
-        list-style-type:none;
-        li
-          background-color white
-          border-radius 10px
-          padding 10px
-          b
-            font 24px 'Goudy Bookletter 1911', serif
-            color #565656
-          span
-            font 18px 'Goudy Bookletter 1911', serif
-            color #b6b5b5
-          p
-            font 14px 'Goudy Bookletter 1911', serif
-
+      section
+        background-color white
+        border-radius 10px
+        padding 10px
+        b
+          font 24px 'Goudy Bookletter 1911', serif
+          color #565656
+        span
+          font 18px 'Goudy Bookletter 1911', serif
+          color #b6b5b5
+        p
+          font 14px 'Goudy Bookletter 1911', serif
+      #back-btn
+        margin-bottom 20px
+  #left-section, #right-section
+    a.webly-btn
+      font-size 13px
+      text-decoration: none
+      color: #7e9294;
+      &:hover
+        color #385e62
   .offer
     margin 0
+    textarea
+      display none
     &:last-child
       padding-bottom 20px
+    h3 + p
+      font italic 14px 'Georgia', serif
+      color #a2a2a2
+      span
+        font inherit
+        font-size 15px
+        color #797979
+      #count-comments a
+        font-size 15px
+        color #797979
+        text-decoration underline
+        &:hover, &:hover span
+          color darken(#797979, 30)
+        span
+          font normal 15px 'Times New Roman', sans-serif
+    figure
+      font normal 15px 'Arial', sans-serif
+      img
+        max-width 150px
+        max-height 150px
+      figcaption
+        color #a2a2a2
+        span
+          font normal 15px 'Arial', sans-serif
+          color #797979
     .text
       margin-left 4px
-    #count-comments
-      a
-        color #8c8a8a
-        text-decoration underline
   h3
     font 24px 'Goudy Bookletter 1911', serif
     color #758b8d
-  img
-    float left
-    margin-right 12px
   span
     font 12px 'Droid Sans', sans-serif
-  svg
-    margin-top 15px
-    g path, tspan
-      cursor pointer
   span.irs-with-grid
     margin-top 20px
   p.region, p.irs-from-bind
     margin-top 20px
+    font 15px 'Arial', sans-serif
+    color #a2a2a2
     span
-      font-size 18px
-//add offer
+      font 16px 'Arial', sans-serif
+      color #797979
+  //add offer
   form
     margin-top 30px
   #user-offers
+    h3 span
+      font 19px 'Times New Roman', sans-serif
     ul
       list-style-type none
       -webkit-padding-start: 0;
       -moz-padding-start: 0;
       -ms-padding-start: 0;
-      //bullets
       li
-        a
-          color #8c8a8a
-          font 12px 'Droid Sans', sans-serif
+        span
+          margin-left 10px
+          font-size 13px
+        //bullets
         &:before
           content url(../imgs/bullets.png)
-          //float left;
-          //margin-left -10px
-//comments
-  textarea
-    display none
-
-
-
-
-
 
 #multimedia-container
   display flex
@@ -305,6 +272,7 @@ select
 #multimedia-left
   background url(../imgs/left-multimedia-bg.png) no-repeat
   width 24px
+  margin-left 10px
 
 #multimedia-center
   background url(../imgs/multimedia-bg.png) repeat-x
@@ -324,6 +292,7 @@ select
 #multimedia-right
   background url(../imgs/right-multimedia-bg.png) no-repeat top right
   width 24px
+  margin-right 10px
 
 #home-bottom-text
   font 24px 'Goudy Bookletter 1911', serif
@@ -331,7 +300,7 @@ select
   text-align center
   margin 8px 0 8px 0
 
-.readmore
+.webly-btn
   background rgb(253, 253, 253)
   background url(data:image/svg + xml)
   background -moz-linear-gradient(top, rgba(253, 253, 253, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(242, 242, 242, 1) 51%, rgba(239, 239, 239, 1) 100%) /* FF3.6-15 */
@@ -350,15 +319,12 @@ select
   border-radius: 10px;
   text-shadow: 1px 1px 1px #ffffff;
   font-family: 'Droid Sans', Arial, sans-serif;
-  &:hover
-    text-decoration: none;
 
-p > .readmore
+p > .webly-btn
   padding-top 6px
   padding-bottom 6px
   margin-left 20px
   vertical-align middle
-
 
 //FOOTER
 #footer-top
@@ -376,6 +342,7 @@ p > .readmore
     margin-bottom 20px
     img
       float left
+      margin-top 5px
       margin-right 12px
   span, li a
     font 12px 'Droid Sans', sans-serif
@@ -390,24 +357,134 @@ p > .readmore
         margin-left -10px
 
   .section-2
-    ul
-      margin-left 115px
+    margin-top 8px
     h3
-      margin-left 140px
-  .section-3
+      margin-left 110px
     ul
-      margin-left 125px
+      margin-left 85px
+  .section-3
+    margin-top 8px
     h3
       margin-left 150px
-
-.proba
-  border 1px solid lightgreen
+    ul
+      margin-left 121px
 
 #footer-bottom
   background-color #131a25
   border-top 1px solid #2c333e
   font 12px 'Droid Sans', sans-serif
   color #aebdd1
+
+//-----------------------------------------
+
+//PAGINATION
+.page
+  width 960px;
+  margin 0 auto;
+
+.list-of-posts
+  min-height 700px;
+
+.pagination li
+  list-style none
+  float left
+  width 20px
+  height 20px
+  font 24px 'Georgia', serif
+  color #758b8d
+  text-align center
+  cursor pointer
+
+.pagination li
+  &:hover
+    color darken(#758b8d, 30)
+    font-size 26px
+
+.pagination ul
+  border 0
+  padding 0
+
+.active-class
+  color darken(#758b8d, 30) !important
+  font-size 26px !important
+
+//------------------------------------
+
+//change default grid
+@media (min-width: 990px)
+  .container
+    width 960px
+
+//mobile
+@media (max-width: 768px)
+  #header-content, nav.center, div.header-buttons
+    display none !important
+
+  div.flex-header
+    display block !important
+    img
+      max-width 20%
+    #m-nav
+      display inline-block
+      float right
+      background-color inherit
+      border none
+      #navbar
+        position absolute
+        background-color white
+        z-index 50
+        right 60px
+        top 10px
+
+  .content-bg
+    #content span
+      font large 'Droid Sans', sans-serif !important
+
+  #left-section
+    #svg-map span
+      font-size 12px !important
+
+  #multimedia-center
+    padding-right 10px
+    a:nth-child(3)
+      display none
+
+//tablet
+@media (max-width: 990px)
+  #content
+    #left-section
+      background url("")
+
+  div#header-content
+    margin-top -9px
+
+  .content-bg div.header-buttons a
+    &:nth-of-type(1)
+      margin-left 30%
+
+  #multimedia-center
+    a
+      &:nth-child(even)
+        display none
+
+  #footer-top
+    .container
+      padding-top 0 !important
+    section
+      h3, ul
+        margin-left 0 !important
+    section
+      &:first-child
+        h3
+          margin-top 6px
+    ul
+      li
+        padding-right 10px
+        display inline-block
+
+  #footer-bottom
+    p
+      float none !important
 
 
 

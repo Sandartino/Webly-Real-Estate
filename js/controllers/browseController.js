@@ -2,6 +2,7 @@ import {templateLoader} from '../template-loader.js';
 import {textHeader}     from '../text-header.js';
 import {data}           from '../BaaS/data.js';
 
+//for tests only
 var browseController = (function () {
     function bgHeader() {
         var obj;
