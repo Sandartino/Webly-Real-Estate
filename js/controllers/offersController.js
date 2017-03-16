@@ -1,6 +1,6 @@
-import {data} from '../BaaS/data.js'
+import {data}           from '../BaaS/data.js';
 import {templateLoader} from '../template-loader.js';
-import {alertCustom} from '../alert.js'
+import {alertCustom}    from '../alert.js';
 import {textHeader}     from '../text-header.js';
 
 var offersController = (function () {
@@ -27,6 +27,7 @@ var offersController = (function () {
                                     textHeader('addoffer');
 
                                     $('#content').on('click', 'form #addOffer-btn', function () {
+                                        
                                         var offer = {
                                             title: $('#title').val(),
                                             price: $('#price').val(),
@@ -47,20 +48,20 @@ var offersController = (function () {
                                                     templateLoader.get('addoffer')
                                                         .then(function (template) {
                                                             $('#content').html(template(obj));
-                                                        })
+                                                        });
                                                 })
                                                 .catch(function (err) {
                                                     alertCustom('Invalid property', 'danger');
                                                     console.log(JSON.parse(err.responseText).message);
-                                                })
+                                                });
                                         }
-                                    })
-                                })
-                        })
+                                    });
+                                });
+                        });
                 } else {
-                    alertCustom('Login required', 'danger')
+                    alertCustom('Login required', 'danger');
                 }
-            })
+            });
     }
 
     //validator client side
@@ -70,18 +71,18 @@ var offersController = (function () {
         }
         if (offer.price < 1000 || offer.price > 50000) {
             alertCustom('Price must be 1000-50000', 'danger');
-            return false
+            return false;
         }
         if (offer.region === null) {
             alertCustom('Property region is empty', 'danger');
-            return false
+            return false;
         }
-        return true
+        return true;
     }
 
-    return offers
+    return offers;
 })();
-export {offersController}
+export {offersController};
 
 
 

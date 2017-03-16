@@ -1,22 +1,39 @@
 import {data} from '../BaaS/data.js';
-import {alertCustom} from '../alert.js'
+import {alertCustom} from '../alert.js';
 
 var userController = (function () {
     $('#register-menu').on('click', function () {
         $('#register-container').toggle();
-        $('#login-container').toggle(false)
+        $('#login-container').toggle(false);
     });
-    $('#login-menu, #login-menu-m').on('click', function () {
+    $('#login-menu').on('click', function () {
         $('#login-container').toggle();
         $('#register-container').toggle(false);
     });
 
+    $('#register-menu-m').on('click', function () {
+        $('#register-container-m').toggle();
+        $('#login-container-m').toggle(false);
+    });
+    $('#login-menu-m').on('click', function () {
+        $('#login-container-m').toggle();
+        $('#register-container-m').toggle(false);
+    });
+
     function register() {
-        $('#register-btn').on('click', function () {
+        $('#register-btn, #register-btn-m').on('click', function () {
             var user = {
                 name: $('#register-name').val(),
                 password: $('#register-pass').val()
             };
+            if (!user.name) {
+                user = {
+                    name: $('#register-name-m').val(),
+                    password: $('#register-pass-m').val()
+                };
+                $('#login-container-m, #register-container-m').toggle(false)
+            }
+
             data.register(user)
                 .then(function () {
                     user.login = user.name;
@@ -26,20 +43,28 @@ var userController = (function () {
                     $('#login-menu a').html('Logged-in');
                 })
                 .then(function () {
-                    alertCustom("Registered </br> Logged-in", 'success')
+                    alertCustom("Registered </br> Logged-in", 'success');
                 })
                 .catch(function (err) {
-                    alertCustom(JSON.parse(err.responseText).message, 'danger')
-                })
+                    alertCustom(JSON.parse(err.responseText).message, 'danger');
+                });
         });
     }
 
     function login() {
-        $('#login-btn').on('click', function () {
+        $('#login-btn, #login-btn-m').on('click', function () {
             var user = {
                 login: $('#login-name').val(),
                 password: $('#login-pass').val()
             };
+            if (!user.login) {
+                user = {
+                    login: $('#login-name-m').val(),
+                    password: $('#login-pass-m').val()
+                };
+                $('#login-container-m, #register-container-m').toggle(false)
+            }
+
             data.login(user)
                 .then(function () {
                     $('#login-container, #register-menu').toggle(false);
@@ -48,7 +73,7 @@ var userController = (function () {
                 })
                 .catch(function (err) {
                     alertCustom(JSON.parse(err.responseText).message, 'danger');
-                })
+                });
         });
     }
 
@@ -60,13 +85,13 @@ var userController = (function () {
                 $('#register-name, #register-pass').val('');
                 //url refresh in case of multiple registrations in one browser session
                 window.location.href = "http://localhost:63342/Webly-Real-Estate/index.html";
-            })
+            });
     }
 
     return {
         register,
         login,
         logout
-    }
+    };
 })();
-export {userController}
+export {userController};

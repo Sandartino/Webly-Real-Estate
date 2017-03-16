@@ -11,7 +11,7 @@ var data = (function () {
         };
 
     function register(user) {
-        return jsonRequester.post(URL + 'users/register', HEADER, user)
+        return jsonRequester.post(URL + 'users/register', HEADER, user);
     }
 
     function login(user) {
@@ -19,40 +19,44 @@ var data = (function () {
             .then(function (res) {
                 login.ownerId = res.ownerId;
                 login.user = res.name;
-                sessionStorage.setItem(AUTH_TOKEN, res["user-token"])
-            })
+                sessionStorage.setItem(AUTH_TOKEN, res["user-token"]);
+            });
     }
 
     function logout() {
         HEADER["user-token"] = sessionStorage.getItem(AUTH_TOKEN);
         return jsonRequester.get(URL + 'users/logout', HEADER)
-            .then(() => sessionStorage.removeItem(AUTH_TOKEN))
+            .then(() => sessionStorage.removeItem(AUTH_TOKEN));
     }
 
     function isLogged() {
         var authToken = sessionStorage.getItem(AUTH_TOKEN);
-        return jsonRequester.get(URL + 'users/isvalidusertoken/' + authToken, HEADER)
+        return jsonRequester.get(URL + 'users/isvalidusertoken/' + authToken, HEADER);
     }
 
     function addOffer(offer) {
-        return jsonRequester.post(URL + 'data/offers', HEADER, offer)
+        return jsonRequester.post(URL + 'data/offers', HEADER, offer);
     }
 
     function offersByOwner() {
         var ownerId = `'${login.ownerId}'`;
-        return jsonRequester.get(URL + 'data/offers?where=' + encodeURIComponent("ownerId=" + ownerId), HEADER)
+        return jsonRequester.get(URL + 'data/offers?where=' + encodeURIComponent("ownerId=" + ownerId), HEADER);
     }
 
     function offers() {
-        return jsonRequester.get(URL + 'data/offers?loadRelations=comments', HEADER)
+        return jsonRequester.get(URL + 'data/offers?loadRelations=comments', HEADER);
     }
 
     function postComment(comment) {
-        return jsonRequester.put(URL + 'data/offers', HEADER, comment)
+        return jsonRequester.put(URL + 'data/offers', HEADER, comment);
     }
 
     function offerById(offerId) {
-        return jsonRequester.get(URL + 'data/offers/' + offerId + '?loadRelations=comments', HEADER)
+        return jsonRequester.get(URL + 'data/offers/' + offerId + '?loadRelations=comments', HEADER);
+    }
+
+    function sendMail(mail) {
+        return jsonRequester.post(URL + 'messaging/email', HEADER, mail);
     }
 
     return {
@@ -64,8 +68,9 @@ var data = (function () {
         offersByOwner,
         offers,
         postComment,
-        offerById
-    }
+        offerById,
+        sendMail
+    };
 
 })();
-export {data}
+export {data};

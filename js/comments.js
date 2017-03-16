@@ -1,4 +1,4 @@
-import {data} from './BaaS/data.js';
+import {data}           from './BaaS/data.js';
 import {templateLoader} from './template-loader.js';
 import 'datetime';
 
@@ -38,11 +38,11 @@ var comments = (function () {
                                 });
                                 $that.parent()
                                     .find('span#count-comments a span')
-                                    .html(commentCount[0].comments.length)
-                            })
-                    })
+                                    .html(commentCount[0].comments.length);
+                            });
+                    });
             }
-        })
+        });
 
     }
 
@@ -59,14 +59,14 @@ var comments = (function () {
                             $('.main-row').on('click', '#left-section #back-btn', function () {
                                 $('#svg-map').toggle(true);
                                 $('#comments-list').empty();
-                            })
-                        })
-                })
-        })
+                            });
+                        });
+                });
+        });
     }
 
-    function sortComments(data){
-        data.comments.sort(function(a, b) {
+    function sortComments(data) {
+        data.comments.sort(function (a, b) {
             return b.created - a.created;
         });
     }
@@ -74,6 +74,6 @@ var comments = (function () {
     return {
         post,
         get
-    }
+    };
 })();
-export {comments}
+export {comments};

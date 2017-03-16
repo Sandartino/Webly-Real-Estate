@@ -17,6 +17,10 @@ var textHeader = (function () {
                 text: 'Add Offer Category',
                 subText: 'Category description'
             },
+            contact: {
+                text: 'Contact Category',
+                subText: 'Category description'
+            },
             returnCategory(){
                 for (let prop in categoryList) {
                     if (categoryList[category] == categoryList[prop]) {
@@ -29,11 +33,11 @@ var textHeader = (function () {
         categoryList.returnCategory();
 
         templateLoader.get('header-text')
-            .then((html) => $('#header-content').html(html(categoryObj)))
+            .then((html) => $('#header-content').html(html(categoryObj)));
 
     }
 
-    return textHeader
+    return textHeader;
 
 })();
-export {textHeader}
+export {textHeader};

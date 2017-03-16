@@ -21,4 +21,4 @@ var templateLoader = function() {
         get: get
     };
 }();
-export {templateLoader}
+export {templateLoader};

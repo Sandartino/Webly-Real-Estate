@@ -46,4 +46,4 @@ var jsonRequester = (function () {
     };
 }());
 
-export {jsonRequester}
+export {jsonRequester};

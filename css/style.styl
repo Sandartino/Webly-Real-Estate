@@ -7,13 +7,13 @@ html, body
 
 //HEADER
 .bg-header-main
-  background-image url('../imgs/header.jpg')
+  background-image url('../img/header.jpg')
   height 0
   background-size 100%
   padding-bottom: 25%
 
 .bg-header-second
-  background-image url('../imgs/header-second.jpg')
+  background-image url('../img/header-second.jpg')
   height 0
   background-size 100%
   padding-bottom 13%
@@ -59,7 +59,6 @@ html, body
   #login-container, #register-container
     display none
     margin-top 20px
-    //margin-left 10px
     a
       background: #70afb6
       background: -moz-linear-gradient(top, #70afb6 0%, #589198 48%, #589198 48%, #51878d 50%, #4b7b80 100%)
@@ -71,10 +70,19 @@ html, body
       padding 5px
       color white
       font 15px 'Droid Sans', sans-serif
+  #login-container input
+    width 152px
+    &:first-of-type
+      margin-left 7px
+  #register-container input
+    width 146px
+    margin-left 2px
 
-.grow
+.slogan
   flex-grow 1
-  margin-top 2%
+  margin-top 23px
+  font italic 12px 'Georgia', serif
+  color #77808d
 
 .center
   align-self center
@@ -82,6 +90,7 @@ html, body
 #header-content
   .carousel-control
     width 0 !important
+    color none
   .carousel-inner
     text-align center
     margin-top 3%
@@ -116,12 +125,13 @@ select
     color: #999999
 
 .content-bg
-  background url(../imgs/content-bg.png) top right
+  background url(../img/content-bg.png) top right
   border-top: 1px solid #ffffff;
   -webkit-box-shadow: inset 0 58px 20px -55px rgba(0, 0, 0, 0.40);
   -moz-box-shadow: inset 0 58px 20px -55px rgba(0, 0, 0, 0.40);
   box-shadow: inset 0 58px 20px -55px rgba(0, 0, 0, 0.40);
   border-bottom 1px solid #e0e0e0
+  min-height 437px;
   .header-buttons a
     margin-top -22px
     color #ffffff;
@@ -147,6 +157,16 @@ select
       padding-right 20px
       box-shadow 0 3px 1px #888888
 
+  #container-m
+    padding-top 15px
+    #register-container-m, #login-container-m
+      display none
+    #login-btn-m
+      width 53px
+    #register-btn-m
+      width 66px
+
+
 #content
   width 100%
   overflow hidden
@@ -163,17 +183,17 @@ select
       g path, tspan
         cursor pointer
   #left-section
-    background-image: url(../imgs/border-content.png);
+    background-image: url(../img/border-content.png);
     background-repeat: repeat-y;
     background-position: right;
     margin-bottom: -9999px;
     padding-bottom: 9999px;
+    form
+      margin-top 30px
     #search-btn
-      display block
       margin-top 20px
       width 54px;
     #addOffer-btn
-      display block
       width 49px;
     #comments-list
       margin-top 25px
@@ -191,13 +211,6 @@ select
           font 14px 'Goudy Bookletter 1911', serif
       #back-btn
         margin-bottom 20px
-  #left-section, #right-section
-    a.webly-btn
-      font-size 13px
-      text-decoration: none
-      color: #7e9294;
-      &:hover
-        color #385e62
   .offer
     margin 0
     textarea
@@ -246,23 +259,35 @@ select
       font 16px 'Arial', sans-serif
       color #797979
   //add offer
-  form
-    margin-top 30px
   #user-offers
     h3 span
       font 19px 'Times New Roman', sans-serif
     ul
       list-style-type none
-      -webkit-padding-start: 0;
-      -moz-padding-start: 0;
-      -ms-padding-start: 0;
+      -webkit-padding-start 0
+      -moz-padding-start 0
+      -ms-padding-start 0
+      padding-start 0
+      padding 0
       li
         span
           margin-left 10px
           font-size 13px
         //bullets
         &:before
-          content url(../imgs/bullets.png)
+          content url(../img/bullets.png)
+  div#location-map
+    height 400px
+    width 100%
+    margin-top 50px
+  #sendMail-btn
+    width 54px
+  #mail-title
+    margin-top 42px
+  #github-logo
+    margin-top 125px
+    margin-bottom 10px
+    margin-left 2px
 
 #multimedia-container
   display flex
@@ -270,12 +295,12 @@ select
   margin-bottom 30px
 
 #multimedia-left
-  background url(../imgs/left-multimedia-bg.png) no-repeat
+  background url(../img/left-multimedia-bg.png) no-repeat
   width 24px
   margin-left 10px
 
 #multimedia-center
-  background url(../imgs/multimedia-bg.png) repeat-x
+  background url(../img/multimedia-bg.png) repeat-x
   height 115px
   width 100%
   div
@@ -290,7 +315,7 @@ select
       margin-left 10px
 
 #multimedia-right
-  background url(../imgs/right-multimedia-bg.png) no-repeat top right
+  background url(../img/right-multimedia-bg.png) no-repeat top right
   width 24px
   margin-right 10px
 
@@ -309,26 +334,31 @@ select
   background -o-linear-gradient(top, rgba(253, 253, 253, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(242, 242, 242, 1) 51%, rgba(239, 239, 239, 1) 100%) /* Opera 11.10-11.50 */
   background -ms-linear-gradient(top, rgba(253, 253, 253, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(242, 242, 242, 1) 51%, rgba(239, 239, 239, 1) 100%) /* IE10 preview */
   background linear-gradient(to bottom, rgba(253, 253, 253, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(242, 242, 242, 1) 51%, rgba(239, 239, 239, 1) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  color: #7e9294;
-  font-size: 11px;
-  line-height: 25px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 1px solid #EBEAEA;
-  border-bottom: 1px solid #CFCECE;
-  border-radius: 10px;
-  text-shadow: 1px 1px 1px #ffffff;
-  font-family: 'Droid Sans', Arial, sans-serif;
+  display block
+  color #7e9294
+  font-size 13px
+  line-height 25px
+  padding-left 10px
+  padding-right 10px
+  border 1px solid #EBEAEA
+  border-bottom 1px solid #CFCECE
+  border-radius 10px
+  text-shadow 1px 1px 1px #ffffff
+  font-family 'Droid Sans', Arial, sans-serif
+  &:hover
+    color #385e62
 
-p > .webly-btn
-  padding-top 6px
-  padding-bottom 6px
+a.webly-btn
+  text-decoration: none
+
+#home-bottom-text a.webly-btn
   margin-left 20px
+  display inline-block
   vertical-align middle
 
 //FOOTER
 #footer-top
-  background url(../imgs/footer.png) repeat-x
+  background url(../img/footer.png) repeat-x
   h3
     font 24px 'Goudy Bookletter 1911', serif
     color #ffffff
@@ -352,7 +382,7 @@ p > .webly-btn
     //bullets
     li
       &:before
-        content url(../imgs/bullets.png)
+        content url(../img/bullets.png)
         float left;
         margin-left -10px
 
@@ -439,6 +469,8 @@ p > .webly-btn
   .content-bg
     #content span
       font large 'Droid Sans', sans-serif !important
+    #github-logo
+      margin-top 12px
 
   #left-section
     #svg-map span
@@ -454,6 +486,8 @@ p > .webly-btn
   #content
     #left-section
       background url("")
+    #github-logo
+      margin-top 12px
 
   div#header-content
     margin-top -9px

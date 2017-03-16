@@ -1,5 +1,5 @@
 import {templateLoader} from '../template-loader.js';
-import {data} from '../BaaS/data.js'
+import {data} from '../BaaS/data.js';
 
 var homeController = (function () {
 
@@ -18,9 +18,9 @@ var homeController = (function () {
                     $('#login-menu a').html('Logged-in');
                     $('#logout-menu').css('display', 'inline');
                 }
-            })
+            });
     }
 
-    return bgHeader
+    return bgHeader;
 })();
-export {homeController}
+export {homeController};

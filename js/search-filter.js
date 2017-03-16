@@ -5,7 +5,7 @@ var searchFilter = (function () {
         var region = $('.region span'),
             $that, currentRegion, regionCollected, html, regexTest, id;
 
-        //slider plugin
+        //slider plugin init
         $("#slider_id").ionRangeSlider({
             type: "double",
             min: 1000,
@@ -15,7 +15,7 @@ var searchFilter = (function () {
             force_edges: true
         });
 
-        //2way-binding 
+        //data binding 
         (function ($) {
             var oldHtml = $.fn.html;
             $.fn.html = function () {
@@ -33,7 +33,7 @@ var searchFilter = (function () {
                 id = $that[0].innerHTML;
                 $that.css('fill', 'inherit');
                 $that = $("path#" + `${id}`);
-                $that.css('fill', '#999999')
+                $that.css('fill', '#999999');
             }
 
             var regionData = $that.data("region");
@@ -42,18 +42,18 @@ var searchFilter = (function () {
             regexTest = currentRegion.test(html);
 
             if (!regexTest) {
-                region.append(regionData + " ")
+                region.append(regionData + " ");
             } else {
                 html = html.replace(currentRegion, "");
                 region.html(html);
                 $that.css('fill', 'inherit');
                 searchFilter.region.splice($.inArray(regionData, searchFilter.region), 1);
-                return
+                return;
             }
 
             regionCollected = $.inArray(regionData, searchFilter.region);
             if (regionCollected < 0) {
-                searchFilter.region.push(regionData)
+                searchFilter.region.push(regionData);
             }
 
         });
@@ -67,8 +67,8 @@ var searchFilter = (function () {
 
     }
 
-    return searchFilter
+    return searchFilter;
 })();
-export {searchFilter}
+export {searchFilter};
 
 

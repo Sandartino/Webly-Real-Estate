@@ -7,13 +7,13 @@ body {
   overflow-x: hidden;
 }
 .bg-header-main {
-  background-image: url("../imgs/header.jpg");
+  background-image: url("../img/header.jpg");
   height: 0;
   background-size: 100%;
   padding-bottom: 25%;
 }
 .bg-header-second {
-  background-image: url("../imgs/header-second.jpg");
+  background-image: url("../img/header-second.jpg");
   height: 0;
   background-size: 100%;
   padding-bottom: 13%;
@@ -80,15 +80,28 @@ body {
   color: #fff;
   font: 15px 'Droid Sans', sans-serif;
 }
-.grow {
+.main-nav #login-container input {
+  width: 152px;
+}
+.main-nav #login-container input:first-of-type {
+  margin-left: 7px;
+}
+.main-nav #register-container input {
+  width: 146px;
+  margin-left: 2px;
+}
+.slogan {
   flex-grow: 1;
-  margin-top: 2%;
+  margin-top: 23px;
+  font: italic 12px 'Georgia', serif;
+  color: #77808d;
 }
 .center {
   align-self: center;
 }
 #header-content .carousel-control {
   width: 0 !important;
+  color: none;
 }
 #header-content .carousel-inner {
   text-align: center;
@@ -124,12 +137,13 @@ select:invalid {
   color: #999;
 }
 .content-bg {
-  background: url("../imgs/content-bg.png") top right;
+  background: url("../img/content-bg.png") top right;
   border-top: 1px solid #fff;
   -webkit-box-shadow: inset 0 58px 20px -55px rgba(0,0,0,0.4);
   -moz-box-shadow: inset 0 58px 20px -55px rgba(0,0,0,0.4);
   box-shadow: inset 0 58px 20px -55px rgba(0,0,0,0.4);
   border-bottom: 1px solid #e0e0e0;
+  min-height: 437px;
 }
 .content-bg .header-buttons a {
   margin-top: -22px;
@@ -159,6 +173,19 @@ select:invalid {
   padding-right: 20px;
   box-shadow: 0 3px 1px #888;
 }
+.content-bg #container-m {
+  padding-top: 15px;
+}
+.content-bg #container-m #register-container-m,
+.content-bg #container-m #login-container-m {
+  display: none;
+}
+.content-bg #container-m #login-btn-m {
+  width: 53px;
+}
+.content-bg #container-m #register-btn-m {
+  width: 66px;
+}
 #content {
   width: 100%;
   overflow: hidden;
@@ -180,19 +207,20 @@ select:invalid {
   cursor: pointer;
 }
 #content #left-section {
-  background-image: url("../imgs/border-content.png");
+  background-image: url("../img/border-content.png");
   background-repeat: repeat-y;
   background-position: right;
   margin-bottom: -9999px;
   padding-bottom: 9999px;
 }
+#content #left-section form {
+  margin-top: 30px;
+}
 #content #left-section #search-btn {
-  display: block;
   margin-top: 20px;
   width: 54px;
 }
 #content #left-section #addOffer-btn {
-  display: block;
   width: 49px;
 }
 #content #left-section #comments-list {
@@ -216,16 +244,6 @@ select:invalid {
 }
 #content #left-section #comments-list #back-btn {
   margin-bottom: 20px;
-}
-#content #left-section a.webly-btn,
-#content #right-section a.webly-btn {
-  font-size: 13px;
-  text-decoration: none;
-  color: #7e9294;
-}
-#content #left-section a.webly-btn:hover,
-#content #right-section a.webly-btn:hover {
-  color: #385e62;
 }
 #content .offer {
   margin: 0;
@@ -295,9 +313,6 @@ select:invalid {
   font: 16px 'Arial', sans-serif;
   color: #797979;
 }
-#content form {
-  margin-top: 30px;
-}
 #content #user-offers h3 span {
   font: 19px 'Times New Roman', sans-serif;
 }
@@ -306,13 +321,31 @@ select:invalid {
   -webkit-padding-start: 0;
   -moz-padding-start: 0;
   -ms-padding-start: 0;
+  padding-start: 0;
+  padding: 0;
 }
 #content #user-offers ul li span {
   margin-left: 10px;
   font-size: 13px;
 }
 #content #user-offers ul li:before {
-  content: url("../imgs/bullets.png");
+  content: url("../img/bullets.png");
+}
+#content div#location-map {
+  height: 400px;
+  width: 100%;
+  margin-top: 50px;
+}
+#content #sendMail-btn {
+  width: 54px;
+}
+#content #mail-title {
+  margin-top: 42px;
+}
+#content #github-logo {
+  margin-top: 125px;
+  margin-bottom: 10px;
+  margin-left: 2px;
 }
 #multimedia-container {
   display: flex;
@@ -320,12 +353,12 @@ select:invalid {
   margin-bottom: 30px;
 }
 #multimedia-left {
-  background: url("../imgs/left-multimedia-bg.png") no-repeat;
+  background: url("../img/left-multimedia-bg.png") no-repeat;
   width: 24px;
   margin-left: 10px;
 }
 #multimedia-center {
-  background: url("../imgs/multimedia-bg.png") repeat-x;
+  background: url("../img/multimedia-bg.png") repeat-x;
   height: 115px;
   width: 100%;
 }
@@ -342,7 +375,7 @@ select:invalid {
   margin-left: 10px;
 }
 #multimedia-right {
-  background: url("../imgs/right-multimedia-bg.png") no-repeat top right;
+  background: url("../img/right-multimedia-bg.png") no-repeat top right;
   width: 24px;
   margin-right: 10px;
 }
@@ -361,8 +394,9 @@ select:invalid {
   background: -o-linear-gradient(top, #fdfdfd 0%, #f7f7f7 50%, #f2f2f2 51%, #efefef 100%) /* Opera 11.10-11.50 */;
   background: -ms-linear-gradient(top, #fdfdfd 0%, #f7f7f7 50%, #f2f2f2 51%, #efefef 100%) /* IE10 preview */;
   background: linear-gradient(to bottom, #fdfdfd 0%, #f7f7f7 50%, #f2f2f2 51%, #efefef 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */;
+  display: block;
   color: #7e9294;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 25px;
   padding-left: 10px;
   padding-right: 10px;
@@ -372,14 +406,19 @@ select:invalid {
   text-shadow: 1px 1px 1px #fff;
   font-family: 'Droid Sans', Arial, sans-serif;
 }
-p > .webly-btn {
-  padding-top: 6px;
-  padding-bottom: 6px;
+.webly-btn:hover {
+  color: #385e62;
+}
+a.webly-btn {
+  text-decoration: none;
+}
+#home-bottom-text a.webly-btn {
   margin-left: 20px;
+  display: inline-block;
   vertical-align: middle;
 }
 #footer-top {
-  background: url("../imgs/footer.png") repeat-x;
+  background: url("../img/footer.png") repeat-x;
 }
 #footer-top h3 {
   font: 24px 'Goudy Bookletter 1911', serif;
@@ -410,7 +449,7 @@ p > .webly-btn {
   list-style-type: none;
 }
 #footer-top ul li:before {
-  content: url("../imgs/bullets.png");
+  content: url("../img/bullets.png");
   float: left;
   margin-left: -10px;
 }
@@ -500,6 +539,9 @@ p > .webly-btn {
   .content-bg #content span {
     font: large 'Droid Sans', sans-serif !important;
   }
+  .content-bg #github-logo {
+    margin-top: 12px;
+  }
   #left-section #svg-map span {
     font-size: 12px !important;
   }
@@ -513,6 +555,9 @@ p > .webly-btn {
 @media (max-width: 990px) {
   #content #left-section {
     background: url("");
+  }
+  #content #github-logo {
+    margin-top: 12px;
   }
   div#header-content {
     margin-top: -9px;

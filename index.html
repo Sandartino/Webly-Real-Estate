@@ -7,16 +7,14 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <script src="bower_components/handlebars/handlebars.min.js"></script>
     <script src="bower_components/routie/dist/routie.min.js"></script>
-    <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Goudy+Bookletter+1911" rel="stylesheet">
-    <!--ion.slider-->
     <script src="bower_components/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
     <link rel="stylesheet" href="bower_components/ion.rangeSlider/css/ion.rangeSlider.css">
     <link rel="stylesheet" href="bower_components/ion.rangeSlider/css/ion.rangeSlider.skinNice.css">
-    <link href="imgs/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 
     <script src="node_modules/systemjs/dist/system.js"></script>
     <script src="js/system-config.js"></script>
@@ -29,26 +27,26 @@
     <div class="container">
         <div class="row">
             <div class="flex-header">
-                <a href="#"><img src="imgs/logo.png" alt=""></a>
-                <span class="grow" style="color:lightgray">Real Estate Agency</span>
+                <a href="#"><img src="img/logo.png" alt=""></a>
+                <span class="slogan">Real Estate Agency</span>
                 <nav class="center main-nav">
                     <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
                         <li><a href="#search">Search</a></li>
                         <li><a href="#addoffer">Add offer</a></li>
-                        <li><a>Browse</a></li>
+                        <li><a href="#contact">Contact</a></li>
                         <li id="login-menu"><a href="#login">Login</a></li>
                         <li id="register-menu"><a href="#register">Register</a></li>
                         <li id="logout-menu"><a href="#logout">Logout</a></li>
                     </ul>
                     <div id="register-container">
-                        <input id="register-name" type="text" placeholder="nickname" size="16">
-                        <input id="register-pass" type="password" placeholder="password" size="16">
+                        <input id="register-name" type="text" placeholder="nickname">
+                        <input id="register-pass" type="password" placeholder="password">
                         <a id="register-btn" href="#">register</a>
                     </div>
                     <div id="login-container">
-                        <input id="login-name" type="text" placeholder="nickname" size="17">
-                        <input id="login-pass" type="password" placeholder="password" size="17">
+                        <input id="login-name" type="text" placeholder="nickname">
+                        <input id="login-pass" type="password" placeholder="password">
                         <a id="login-btn" href="#">login</a>
                     </div>
                 </nav>
@@ -67,9 +65,10 @@
                             <li><a href="#">HOME</a></li>
                             <li><a href="#search">SEARCH</a></li>
                             <li><a href="#addoffer">ADD OFFER</a></li>
-                            <li><a>BROWSE</a></li>
+                            <li><a href="#contact">CONTACT</a></li>
                             <li id="login-menu-m"><a href="#login">LOGIN</a></li>
-                            <li><a href="#register">REGISTER</a></li>
+                            <li id="register-menu-m"><a href="#register">REGISTER</a></li>
+                            <li><a href="#logout">LOGOUT</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -88,12 +87,41 @@
         <a><span>Sign Up Now</span></a>
     </div>
     <div class="container">
+        <!--mobile log/reg-->
+        <div id="container-m" class="row">
+            <div class="col-xs-5">
+                <div id="register-container-m" class="center-block">
+                    <form>
+                        <div class="form-group">
+                            <input id="register-name-m" class="form-control" type="text" placeholder="nickname">
+                        </div>
+                        <div class="form-group">
+                            <input id="register-pass-m" class="form-control" type="password" placeholder="password">
+                        </div>
+                        <a id="register-btn-m" class="webly-btn" href="#">register</a>
+                    </form>
+                </div>
+                <div id="login-container-m">
+                    <form>
+                        <div class="form-group">
+                            <input id="login-name-m" class="form-control" type="text" placeholder="nickname">
+                        </div>
+                        <div class="form-group">
+                            <input id="login-pass-m" class="form-control" type="password" placeholder="password">
+                        </div>
+                        <a id="login-btn-m" class="webly-btn" href="#">login</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div id="content"></div>
+
     </div>
+
 </div>
-<!--<p id="home-bottom-text">We offer the highest quality and most advanced web design services anywhere <a class="webly-btn">ReadMore</a>-->
-<p id="home-bottom-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam ac nisl metus <a class="webly-btn">ReadMore</a>
-</p>
+
+<p id="home-bottom-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam ac nisl metus <a class="webly-btn">ReadMore</a></p>
 
 <!--FOOTER-->
 <footer>
@@ -102,7 +130,7 @@
             <div class="row">
                 <article>
                     <section class="col-md-4">
-                        <h3><img id="footer-logo" src="imgs/logo.png" alt=""><span>&#169; 2017 Apostolov</span></h3>
+                        <h3><img id="footer-logo" src="img/logo.png" alt=""><span>&#169; 2017 Apostolov</span></h3>
                         <p>
                             <img src="https://placehold.it/66x66" alt="">
                             <span>Lorem ipsum dolor sit amet, leo consectetur adipiscing elit. Etiam ac nisl ut metus mollis sollicitudin efficitur ac justo. Integer laoreet, metus ac rutrum faucibus, sapien nunc posuere nibh, sed gravida nunc leo ut sem. Nulla faucibus egestas</span>
