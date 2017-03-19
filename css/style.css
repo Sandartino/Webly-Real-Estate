@@ -232,7 +232,7 @@ select:invalid {
   padding: 10px;
 }
 #content #left-section #comments-list section b {
-  font: 24px 'Goudy Bookletter 1911', serif;
+  font: 23px 'Goudy Bookletter 1911', serif;
   color: #565656;
 }
 #content #left-section #comments-list section span {
@@ -240,7 +240,7 @@ select:invalid {
   color: #b6b5b5;
 }
 #content #left-section #comments-list section p {
-  font: 14px 'Goudy Bookletter 1911', serif;
+  font: 13px 'Droid Sans', sans-serif;
 }
 #content #left-section #comments-list #back-btn {
   margin-bottom: 20px;
@@ -275,18 +275,16 @@ select:invalid {
 #content .offer h3 + p #count-comments a span {
   font: normal 15px 'Times New Roman', sans-serif;
 }
-#content .offer figure {
-  font: normal 15px 'Arial', sans-serif;
-}
 #content .offer figure img {
   max-width: 150px;
   max-height: 150px;
 }
 #content .offer figure figcaption {
+  font: 15px 'Droid Sans', sans-serif;
   color: #a2a2a2;
 }
 #content .offer figure figcaption span {
-  font: normal 15px 'Arial', sans-serif;
+  font-size: 17px;
   color: #797979;
 }
 #content .offer .text {
@@ -305,12 +303,12 @@ select:invalid {
 #content p.region,
 #content p.irs-from-bind {
   margin-top: 20px;
-  font: 15px 'Arial', sans-serif;
+  font: 15px 'Droid Sans', sans-serif;
   color: #a2a2a2;
 }
 #content p.region span,
 #content p.irs-from-bind span {
-  font: 16px 'Arial', sans-serif;
+  font-size: 17px;
   color: #797979;
 }
 #content #user-offers h3 span {
@@ -537,13 +535,13 @@ a.webly-btn {
     top: 10px;
   }
   .content-bg #content span {
-    font: large 'Droid Sans', sans-serif !important;
+    font-size: 16px;
   }
   .content-bg #github-logo {
     margin-top: 12px;
   }
   #left-section #svg-map span {
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
   #multimedia-center {
     padding-right: 10px;
