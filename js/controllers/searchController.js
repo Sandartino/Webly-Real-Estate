@@ -1,10 +1,10 @@
-import {templateLoader} from '../template-loader.js';
-import {textHeader}     from '../text-header.js';
-import {data}           from '../BaaS/data.js';
-import {searchFilter}   from '../search-filter.js';
-import {comments}       from '../comments.js';
-import {alertCustom}    from '../alert.js';
-import 'pagination';
+import {templateLoader} from '../modules/template-loader.js';
+import {textHeader}     from '../modules/text-header.js';
+import {data}           from '../back-end/data.js';
+import {searchFilter}   from '../modules/search-filter.js';
+import {comments}       from '../modules/comments.js';
+import {alertCustom}    from '../modules/alert.js';
+import '../modules/paginate';
 
 var searchController = (function () {
     function search() {

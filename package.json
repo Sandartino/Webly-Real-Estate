@@ -2,14 +2,16 @@
   "name": "webly-spa",
   "version": "1.0.0",
   "description": "Telerik Front-End Development Course Project",
-  "main": "index.js",
+  "main": "./js/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --open",
+    "build": "webpack -p"
   },
   "author": "Plamen Apostolov",
   "license": "ISC",
-  "dependencies": {
-    "systemjs": "^0.20.2",
-    "systemjs-plugin-babel": "0.0.19"
+  "devDependencies": {
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
   }
 }

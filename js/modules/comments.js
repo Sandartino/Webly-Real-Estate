@@ -1,6 +1,6 @@
-import {data}           from './BaaS/data.js';
+import {data}           from '../back-end/data.js';
 import {templateLoader} from './template-loader.js';
-import 'datetime';
+import './datetime';
 
 var comments = (function () {
     var text, objectId, user, comment, parent, $that, commentCount;

@@ -1,7 +1,7 @@
-import {data}           from '../BaaS/data.js';
-import {templateLoader} from '../template-loader.js';
-import {alertCustom}    from '../alert.js';
-import {textHeader}     from '../text-header.js';
+import {data}           from '../back-end/data.js';
+import {templateLoader} from '../modules/template-loader.js';
+import {alertCustom}    from '../modules/alert.js';
+import {textHeader}     from '../modules/text-header.js';
 
 var offersController = (function () {
     function offers() {
@@ -67,7 +67,7 @@ var offersController = (function () {
     //validator client side
     function validateOffer(offer) {
         if (offer.img.length == 0) {
-            offer.img = "https://placehold.it/150x150";
+            offer.img = "http://placehold.it/150x150";
         }
         if (offer.price < 1000 || offer.price > 50000) {
             alertCustom('Price must be 1000-50000', 'danger');

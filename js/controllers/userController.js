@@ -1,5 +1,5 @@
-import {data} from '../BaaS/data.js';
-import {alertCustom} from '../alert.js';
+import {data} from '../back-end/data.js';
+import {alertCustom} from '../modules/alert.js';
 
 var userController = (function () {
     $('#register-menu').on('click', function () {
@@ -77,14 +77,15 @@ var userController = (function () {
         });
     }
 
+    var hostname = window.location.href;
     function logout() {
         data.logout()
             .then(function () {
                 $('#login-menu a').html('Login');
                 $('#logout-menu, #register-menu').toggle();
                 $('#register-name, #register-pass').val('');
-                //url refresh in case of multiple registrations in one browser session
-                window.location.href = "http://localhost:63342/Webly-Real-Estate/index.html";
+
+                window.location.href = hostname;
             });
     }
 

@@ -1,7 +1,7 @@
-import {templateLoader} from '../template-loader.js';
-import {textHeader}     from '../text-header.js';
-import {data}           from '../BaaS/data.js';
-import {alertCustom}    from '../alert.js';
+import {templateLoader} from '../modules/template-loader.js';
+import {textHeader}     from '../modules/text-header.js';
+import {data}           from '../back-end/data.js';
+import {alertCustom}    from '../modules/alert.js';
 
 var contactController = (function () {
 

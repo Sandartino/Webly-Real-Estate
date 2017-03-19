@@ -1,5 +1,5 @@
-import {templateLoader} from '../template-loader.js';
-import {data} from '../BaaS/data.js';
+import {templateLoader} from '../modules/template-loader.js';
+import {data} from '../back-end/data.js';
 
 var homeController = (function () {
 

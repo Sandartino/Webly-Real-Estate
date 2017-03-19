@@ -1,3 +1,5 @@
+<a href="http://webly.epizy.com" target="_blank">http://webly.epizy.com</a>
+
 # Requirements for the "Web front-end develeopment" course project
 
 This document describes the final project assignment for Telerik Academy students in "Web front-end develeopment" course
