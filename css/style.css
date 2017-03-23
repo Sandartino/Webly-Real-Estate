@@ -489,6 +489,9 @@ a.webly-btn {
   text-align: center;
   cursor: pointer;
 }
+.pagination li:nth-child(n + 11) {
+  margin-left: 7px;
+}
 .pagination li:hover {
   color: #2f393a;
   font-size: 26px;
