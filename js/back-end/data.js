@@ -44,7 +44,7 @@ var data = (function () {
     }
 
     function offers() {
-        return jsonRequester.get(URL + 'data/offers?loadRelations=comments', HEADER);
+        return jsonRequester.get(URL + 'data/offers?loadRelations=comments&pageSize=100', HEADER);
     }
 
     function postComment(comment) {
