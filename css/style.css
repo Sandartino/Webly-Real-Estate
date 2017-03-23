@@ -173,9 +173,6 @@ select:invalid {
   padding-right: 20px;
   box-shadow: 0 3px 1px #888;
 }
-.content-bg #container-m {
-  padding-top: 15px;
-}
 .content-bg #container-m #register-container-m,
 .content-bg #container-m #login-container-m {
   display: none;
@@ -514,6 +511,9 @@ a.webly-btn {
   nav.center,
   div.header-buttons {
     display: none !important;
+  }
+  #container-m {
+    padding-top: 15px;
   }
   div.flex-header {
     display: block !important;
