@@ -1,4 +1,4 @@
-import {data}           from '../back-end/data.js';
+import {data}           from '../data/data.js';
 import {templateLoader} from './template-loader.js';
 import './datetime';
 

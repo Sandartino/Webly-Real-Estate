@@ -1,4 +1,4 @@
-import {data}           from '../back-end/data.js';
+import {data}           from '../data/data.js';
 import {templateLoader} from '../modules/template-loader.js';
 import {alertCustom}    from '../modules/alert.js';
 import {textHeader}     from '../modules/text-header.js';

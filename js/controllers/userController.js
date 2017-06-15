@@ -1,5 +1,6 @@
-import {data} from '../back-end/data.js';
+import {data} from '../data/data.js';
 import {alertCustom} from '../modules/alert.js';
+
 
 var userController = (function () {
     $('#register-menu').on('click', function () {
@@ -84,9 +85,13 @@ var userController = (function () {
                 $('#login-menu a').html('Login');
                 $('#logout-menu, #register-menu').toggle();
                 $('#register-name, #register-pass').val('');
-
+                
                 window.location.href = hostname;
-            });
+            })
+            .then(function () {
+                sessionStorage.setItem("autoLogin", "1");
+            })
+        
     }
 
     return {

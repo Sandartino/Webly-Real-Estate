@@ -1,6 +1,6 @@
 import {templateLoader} from '../modules/template-loader.js';
 import {textHeader}     from '../modules/text-header.js';
-import {data}           from '../back-end/data.js';
+import {data}           from '../data/data.js';
 import {searchFilter}   from '../modules/search-filter.js';
 import {comments}       from '../modules/comments.js';
 import {alertCustom}    from '../modules/alert.js';

@@ -1,6 +1,22 @@
 <a href="http://webly.epizy.com" target="_blank">http://webly.epizy.com</a>
 
-# Requirements for the "Web front-end develeopment" course project
+# Final Course Project for Telerik Academy <a href="http://telerikacademy.com/" target="_blank"><img src="./img/telerik.png" width="40" height="37" border="0"  alt="Telerik Logo" /></a>
+**Design and implement SPA**
+<br>
+<br>
+Key Requirements:
+- Slice the given <a href="./img/template.jpg" target="_blank">template</a>
+- Responsive design
+- Implement back-end
+- High-quality code
+- CSS Preprocessor
+- Use GIT
+
+<hr>
+
+## Full Requirement:
+
+# Requirements for the "Web front-end development" course project
 
 This document describes the final project assignment for Telerik Academy students in "Web front-end develeopment" course
 
@@ -30,7 +46,7 @@ It could be a simple game, component library, business application or any other
 ##  General Requirements
 Please define and implement the following assets in your project:
 - Slice the given design in PSD (33 points)
-  - You can find your selected design [here](PSDs.md)
+  - You can find your selected design ~~[here](PSDs.md)~~
 - Implement responsive design (34 points)
   - Your web application must look good on any resolution
 - Use a web server (33 points)

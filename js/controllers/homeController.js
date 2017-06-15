@@ -1,8 +1,9 @@
 import {templateLoader} from '../modules/template-loader.js';
-import {data} from '../back-end/data.js';
+import {data} from '../data/data.js';
+import {alertCustom}    from '../modules/alert.js';
 
 var homeController = (function () {
-
+    
     function bgHeader() {
         $('.header-buttons, #home-bottom-text').toggle(true);
         $('#bg-header').addClass('bg-header-main').removeClass('bg-header-second');
@@ -13,10 +14,27 @@ var homeController = (function () {
 
         data.isLogged()
             .then(function (isLogged) {
-                if(isLogged){
+                if (isLogged) {
                     $('#register-menu').toggle(false);
                     $('#login-menu a').html('Logged-in');
                     $('#logout-menu').css('display', 'inline');
+                } else if(sessionStorage.getItem("autoLogin") !== "1") {
+                    var user = {
+                        login: "test_user",
+                        password: "test_user"
+                    };
+                    data.login(user)
+                        .then(function () {
+                            $('#login-container, #register-menu').toggle(false);
+                            $('#login-menu a').html('Logged-in');
+                            $('#logout-menu').css('display', 'inline');
+                            alertCustom("Auto logged in as: </br> <b>test_user</b>", 'success');
+                        })
+                        .catch(function (err) {
+                            console.log("Error in auto-login");
+                            console.log(err);
+                        })
+
                 }
             });
     }

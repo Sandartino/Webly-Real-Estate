@@ -260,7 +260,7 @@ select:invalid {
   color: #797979;
 }
 #content .offer h3 + p #count-comments a {
-  font-size: 15px;
+  font-size: 16px;
   color: #797979;
   text-decoration: underline;
 }
@@ -309,6 +309,10 @@ select:invalid {
 }
 #content #user-offers h3 span {
   font: 19px 'Times New Roman', sans-serif;
+}
+#content #user-offers h3 span.user {
+  font: 24px 'Goudy Bookletter 1911', serif;
+  color: #5e7071;
 }
 #content #user-offers ul {
   list-style-type: none;

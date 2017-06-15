@@ -1,6 +1,6 @@
 import {templateLoader} from '../modules/template-loader.js';
 import {textHeader}     from '../modules/text-header.js';
-import {data}           from '../back-end/data.js';
+import {data}           from '../data/data.js';
 import {alertCustom}    from '../modules/alert.js';
 
 var contactController = (function () {
@@ -29,7 +29,7 @@ var contactController = (function () {
 
                                 data.sendMail(mail)
                                     .then(function () {
-                                        alertCustom('Success', 'success');
+                                        alertCustom('Message sent', 'success');
                                         $('#mail')[0].reset();
                                     })
                                     .catch(function (err) {
