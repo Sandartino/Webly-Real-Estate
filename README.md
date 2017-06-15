@@ -1,11 +1,11 @@
-<a href="http://webly.epizy.com" rel="noreferrer" target="_blank">http://webly.epizy.com</a>
+<a href="http://webly.epizy.com" target="_blank">http://webly.epizy.com</a>
 
-# Final Course Project for Telerik Academy <a href="http://telerikacademy.com/" rel="noreferrer" target="_blank"><img src="./img/telerik.png" width="40" height="37" border="0"  alt="Telerik Logo" /></a>
+# Final Course Project for Telerik Academy <a href="http://telerikacademy.com/" target="_blank"><img src="./img/telerik.png" width="40" height="37" border="0"  alt="Telerik Logo" /></a>
 **Design and implement SPA**
 <br>
 <br>
 Key Requirements:
-- Slice the given <a href="./img/template.jpg" rel="noreferrer" target="_blank">template</a>
+- Slice the given <a href="./img/template.jpg" target="_blank">template</a>
 - Responsive design
 - Implement back-end
 - High-quality code
@@ -70,7 +70,7 @@ Follow the best practices for producing high-quality code:
   - Use OOP and modules
 - **Strong cohesion** and **loose coupling**
 - Use **GIT** as a source control system
-  - Host it on [http://github.com](http://github.com)
+  - Host it on [http://github.com](http://github.com?target=_blank)
 - Writing **Efficient** CSS
 - Using **good practices for CSS**
   - Efficiency, naming, etc..
