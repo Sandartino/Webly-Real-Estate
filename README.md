@@ -1,18 +1,18 @@
-<a href="http://webly.epizy.com" target="_blank">http://webly.epizy.com</a>
+<a href="http://webly.epizy.com" rel="noreferrer" target="_blank">http://webly.epizy.com</a>
 
-# Final Course Project for Telerik Academy <a href="http://telerikacademy.com/" target="_blank"><img src="./img/telerik.png" width="40" height="37" border="0"  alt="Telerik Logo" /></a>
+# Final Course Project for Telerik Academy <a href="http://telerikacademy.com/" rel="noreferrer" target="_blank"><img src="./img/telerik.png" width="40" height="37" border="0"  alt="Telerik Logo" /></a>
 **Design and implement SPA**
 <br>
 <br>
 Key Requirements:
-- Slice the given <a href="./img/template.jpg" target="_blank">template</a>
+- Slice the given <a href="./img/template.jpg" rel="noreferrer" target="_blank">template</a>
 - Responsive design
 - Implement back-end
 - High-quality code
 - CSS Preprocessor
 - Use GIT
 
-<hr>
+<br>
 
 ## Full Requirement:
 
