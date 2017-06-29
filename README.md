@@ -4,7 +4,7 @@
 **Design and implement SPA**
 <br>
 <br>
-Key Requirements:
+Summary:
 - Slice the given <a href="./img/template.jpg" target="_blank">template</a>
 - Responsive design
 - Implement back-end
@@ -70,7 +70,7 @@ Follow the best practices for producing high-quality code:
   - Use OOP and modules
 - **Strong cohesion** and **loose coupling**
 - Use **GIT** as a source control system
-  - Host it on [http://github.com](http://github.com?target=_blank)
+  - Host it on [http://github.com](http://github.com?)
 - Writing **Efficient** CSS
 - Using **good practices for CSS**
   - Efficiency, naming, etc..
@@ -107,3 +107,5 @@ Each student will have to deliver a public defense of its work to the other stud
 -   Demonstrate the application (very shortly)
 -   Show the source code
 -   Answer the questions from the trainers
+
+
