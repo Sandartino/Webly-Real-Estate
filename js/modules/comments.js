@@ -3,7 +3,7 @@ import {templateLoader} from './template-loader.js';
 import './datetime';
 
 var comments = (function () {
-    var text, objectId, user, comment, parent, $that, commentCount;
+    var text, offerId, user, comment, parent, $that, commentCount;
 
     function post() {
         $('.offer').on('click', '#comment-btn', function () {
@@ -15,31 +15,30 @@ var comments = (function () {
             $that = $(this);
             parent = $(this.parentElement)[0].className;
             text = $(this).next().val();
-            objectId = $(this).data("object-id");
-            user = data.login.user;
+            offerId = $(this).data("object-id");
+            user = sessionStorage.getItem('userName');
             $(this).removeClass('first-click');
-            comment = {
-                objectId: objectId,
-                comments: [
-                    {
-                        text: text,
-                        user: user,
-                        ___class: "comments"
-                    }
-                ]
-            };
-            if (comment.comments[0].text) {
+            comment =
+                {
+                    text: text,
+                    user: user
+                };
+
+            if (comment.text) {
                 data.postComment(comment)
-                    .then(function () {
-                        data.offers()
-                            .then(function (res) {
-                                commentCount = $.grep(res.data, function (e) {
-                                    return e.objectId == objectId;
-                                });
-                                $that.parent()
-                                    .find('span#count-comments a span')
-                                    .html(commentCount[0].comments.length);
-                            });
+                    .then(function (res) {
+                        var commentId = [res.objectId];
+                        data.addRelationComment(offerId, commentId)
+                            .then(function () {
+                                data.commentCount(offerId)
+                                    .then(function (count) {
+                                        $that.parent()
+                                            .find('span#count-comments a span')
+                                            .html(count)
+                                            .animate({fontSize: '21px'},'fast')
+                                            .animate({fontSize: '19px'},'fast')
+                                    })
+                            })
                     });
             }
         });
@@ -48,8 +47,8 @@ var comments = (function () {
 
     function get() {
         $('#right-section').on('click', 'p #count-comments', function () {
-            objectId = $(this).data("object-id");
-            data.offerById(objectId)
+            offerId = $(this).data("object-id");
+            data.offerById(offerId)
                 .then(function (data) {
                     sortComments(data);
                     templateLoader.get('comments-list')

@@ -4,6 +4,7 @@ import {data}           from '../data/data.js';
 import {alertCustom}    from '../modules/alert.js';
 
 var contactController = (function () {
+console.log()
 
     function contact() {
         data.isLogged()

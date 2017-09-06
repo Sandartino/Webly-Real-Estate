@@ -5,8 +5,8 @@ import {textHeader}     from '../modules/text-header.js';
 
 var offersController = (function () {
     function offers() {
-        var ownerId = data.login.ownerId,
-            user = data.login.user,
+        var ownerId = sessionStorage.getItem('ownerId'),
+            user = sessionStorage.getItem('userName'),
             validOffer = false;
         data.isLogged()
             .then(function (logged) {
@@ -27,10 +27,10 @@ var offersController = (function () {
                                     textHeader('addoffer');
 
                                     $('#content').on('click', 'form #addOffer-btn', function () {
-                                        
+
                                         var offer = {
                                             title: $('#title').val(),
-                                            price: $('#price').val(),
+                                            price: +$('#price').val(),
                                             img: $('#img-url').val(),
                                             region: $('#select').val(),
                                             text: $('#textarea').val(),
@@ -43,8 +43,7 @@ var offersController = (function () {
                                         if (validOffer) {
                                             data.addOffer(offer)
                                                 .then(function (res) {
-                                                    obj.totalObjects += 1;
-                                                    obj.data.push(res);
+                                                    obj.push(res);
                                                     templateLoader.get('addoffer')
                                                         .then(function (template) {
                                                             $('#content').html(template(obj));

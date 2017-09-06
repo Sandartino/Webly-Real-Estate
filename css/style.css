@@ -256,20 +256,16 @@ select:invalid {
 }
 #content .offer h3 + p span {
   font: inherit;
-  font-size: 15px;
+  font-size: 16px;
   color: #797979;
 }
 #content .offer h3 + p #count-comments a {
   font-size: 16px;
-  color: #797979;
   text-decoration: underline;
 }
-#content .offer h3 + p #count-comments a:hover,
-#content .offer h3 + p #count-comments a:hover span {
-  color: #2c2c2c;
-}
 #content .offer h3 + p #count-comments a span {
-  font: normal 15px 'Times New Roman', sans-serif;
+  font: normal 19px 'Times New Roman', sans-serif;
+  color: inherit;
 }
 #content .offer figure img {
   max-width: 150px;

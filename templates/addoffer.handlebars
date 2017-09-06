@@ -38,9 +38,9 @@
 
     <div id="right-section" class="col-md-6">
         <div id="user-offers">
-            <h3><span class="user">{{user}}</span> you have <span>{{totalObjects}}</span> offers</h3>
+            <h3><span class="user">{{user}}</span> you have <span>{{length}}</span> offers</h3>
             <ul>
-                {{#each data}}
+                {{#each this}}
                     <li><span>{{title}}</span></li>
                 {{/each}}
             </ul>

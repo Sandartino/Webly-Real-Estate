@@ -3,7 +3,7 @@ import {data} from '../data/data.js';
 import {alertCustom}    from '../modules/alert.js';
 
 var homeController = (function () {
-    
+
     function bgHeader() {
         $('.header-buttons, #home-bottom-text').toggle(true);
         $('#bg-header').addClass('bg-header-main').removeClass('bg-header-second');
