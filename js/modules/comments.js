@@ -35,8 +35,8 @@ var comments = (function () {
                                         $that.parent()
                                             .find('span#count-comments a span')
                                             .html(count)
-                                            .animate({fontSize: '21px'},'fast')
-                                            .animate({fontSize: '19px'},'fast')
+                                            .animate({fontSize: '35px'}, 'fast')
+                                            .animate({fontSize: '19px'}, 'slow')
                                     })
                             })
                     });

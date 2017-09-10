@@ -303,8 +303,9 @@ select:invalid {
   font-size: 17px;
   color: #797979;
 }
-#content #user-offers h3 span {
-  font: 19px 'Times New Roman', sans-serif;
+#content #user-offers #count-offer {
+  font: 22px 'Times New Roman', sans-serif;
+  color: #5e7071;
 }
 #content #user-offers h3 span.user {
   font: 24px 'Goudy Bookletter 1911', serif;

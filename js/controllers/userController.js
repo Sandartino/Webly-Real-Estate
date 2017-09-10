@@ -41,7 +41,7 @@ var userController = (function () {
                     data.login(user);
                     $('#register-container, #register-menu').toggle();
                     $('#logout-menu').css('display', 'inline');
-                    $('#login-menu a').html('Logged-in');
+                    $('#login-menu a').html('Logged-in').css('color', '#009900');
                 })
                 .then(function () {
                     alertCustom("Registered </br> Logged-in", 'success');
@@ -69,7 +69,7 @@ var userController = (function () {
             data.login(user)
                 .then(function () {
                     $('#login-container, #register-menu').toggle(false);
-                    $('#login-menu a').html('Logged-in');
+                    $('#login-menu a').html('Logged-in').css('color', '#009900');
                     $('#logout-menu').css('display', 'inline');
                 })
                 .catch(function (err) {
@@ -82,7 +82,7 @@ var userController = (function () {
     function logout() {
         data.logout()
             .then(function () {
-                $('#login-menu a').html('Login');
+                $('#login-menu a').html('Login').css('color', '#000');
                 $('#logout-menu, #register-menu').toggle();
                 $('#register-name, #register-pass').val('');
                 

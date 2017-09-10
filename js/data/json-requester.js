@@ -33,8 +33,8 @@ var jsonRequester = (function () {
         return send('PUT', url, header, data);
     }
 
-    function del(url, options) {
-        return send('POST', url, options);
+    function del(url) {
+        return send('DELETE', url);
     }
 
     return {
@@ -42,7 +42,7 @@ var jsonRequester = (function () {
         get: get,
         post: post,
         put: put,
-        delete: del
+        del: del
     };
 }());
 

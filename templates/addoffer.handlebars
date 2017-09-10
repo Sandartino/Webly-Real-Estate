@@ -38,12 +38,23 @@
 
     <div id="right-section" class="col-md-6">
         <div id="user-offers">
-            <h3><span class="user">{{user}}</span> you have <span>{{length}}</span> offers</h3>
-            <ul>
-                {{#each this}}
-                    <li><span>{{title}}</span></li>
-                {{/each}}
-            </ul>
+            <h3><span class="user">{{user}}</span> you have <span id="count-offer">{{length}}</span> offers</h3>
+            <div class="row">
+                <div class="col-md-6" >
+                    <ul id="list-offer">
+                        {{#each this}}
+                            <li id="{{objectId}}"><span data-objectid= {{objectId}}>{{title}}</span></li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div id="delete" class="col-md-6">
+                    {{#each this}}
+                        <a style="display: block" href="#addoffer"><img src="./img/delete.png" data-objectid= {{objectId}}></a>
+                    {{/each}}
+                </div>
+            </div>
+
         </div>
+
     </div>
 </div>

@@ -26,8 +26,8 @@ var offersController = (function () {
 
                                     textHeader('addoffer');
 
-                                    $('#content').on('click', 'form #addOffer-btn', function () {
-
+                                    //add
+                                    $('#addOffer-btn').on('click', function () {
                                         var offer = {
                                             title: $('#title').val(),
                                             price: +$('#price').val(),
@@ -44,17 +44,33 @@ var offersController = (function () {
                                             data.addOffer(offer)
                                                 .then(function (res) {
                                                     obj.push(res);
-                                                    templateLoader.get('addoffer')
-                                                        .then(function (template) {
-                                                            $('#content').html(template(obj));
-                                                        });
+                                                    var li = "<li id=" +`${res.objectId}`+"><span data-objectid="+ `${res.objectId}`+">"+`${res.title}`+"</span></li>";
+                                                    var img = "<a style='display: block' href='#addoffer'><img src='./img/delete.png' data-objectid=" +`${res.objectId}`+"></a>";
+                                                    $('#count-offer').html(obj.length)
+                                                    $('#list-offer').append(li);
+                                                    $('#delete').append(img);
+                                                    //alertCustom('success','success')
                                                 })
-                                                .catch(function (err) {
-                                                    alertCustom('Invalid property', 'danger');
-                                                    console.log(JSON.parse(err.responseText).message);
-                                                });
                                         }
                                     });
+
+                                    //delete
+                                    $('#delete').on('click', 'img', function () {
+                                        var deleteOffer = $(this).data("objectid");
+                                        $('li#' + deleteOffer).remove();
+                                        $(this).parent().remove();
+                                        $('#count-offer').html(obj.length - 1);
+                                        data.deleteOffer(deleteOffer)
+                                            .then(function () {
+                                                obj = $.grep(obj, function (n) {
+                                                    return n.objectId !== deleteOffer
+                                                });
+                                                obj.ownerId = ownerId;
+                                                obj.user = user;
+                                                alertCustom('deleted','success')
+                                            })
+                                    });
+
                                 });
                         });
                 } else {
@@ -63,14 +79,18 @@ var offersController = (function () {
             });
     }
 
-    //validator client side
+
     function validateOffer(offer) {
-        if (offer.img.length == 0) {
-            offer.img = "http://placehold.it/150x150";
+        if(offer.title.length > 27){
+            alertCustom('Title must be under 28 symbols', 'danger');
+            return false;
         }
-        if (offer.price < 1000 || offer.price > 50000) {
+        if (offer.price < 1000 || offer.price > 50000 || isNaN(offer.price)) {
             alertCustom('Price must be 1000-50000', 'danger');
             return false;
+        }
+        if (offer.img.length === 0) {
+            offer.img = "http://placehold.it/150x150";
         }
         if (offer.region === null) {
             alertCustom('Property region is empty', 'danger');
@@ -82,6 +102,10 @@ var offersController = (function () {
     return offers;
 })();
 export {offersController};
+
+// .catch(function (err) {
+//     console.log(JSON.parse(err.responseText).message);
+// });
 
 
 

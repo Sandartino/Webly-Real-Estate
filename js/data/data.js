@@ -38,6 +38,10 @@ var data = (function () {
         return jsonRequester.post(URL + '/data/offers', HEADER, offer);
     }
 
+    function deleteOffer(offer) {
+        return jsonRequester.del(URL + '/data/offers/' + offer, HEADER);
+    }
+
     function offersByOwner() {
         //var ownerId = `'${login.ownerId}'`;
         var ownerId = `'${sessionStorage.getItem('ownerId')}'`;
@@ -74,6 +78,7 @@ var data = (function () {
         logout,
         isLogged,
         addOffer,
+        deleteOffer,
         offersByOwner,
         offers,
         postComment,

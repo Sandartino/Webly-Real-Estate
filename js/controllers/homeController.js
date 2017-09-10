@@ -16,23 +16,24 @@ var homeController = (function () {
             .then(function (isLogged) {
                 if (isLogged) {
                     $('#register-menu').toggle(false);
-                    $('#login-menu a').html('Logged-in');
+                    $('#login-menu a').html('Logged-in').css('color', '#009900');
                     $('#logout-menu').css('display', 'inline');
-                } else if(sessionStorage.getItem("autoLogin") !== "1") {
+                } else if (sessionStorage.getItem("autoLogin") !== "1") {
                     var user = {
                         login: "test_user",
                         password: "test_user"
                     };
+                    sessionStorage.removeItem("autoLogin");
                     data.login(user)
                         .then(function () {
                             $('#login-container, #register-menu').toggle(false);
-                            $('#login-menu a').html('Logged-in');
+                            $('#login-menu a').html('Logged-in').css('color', '#009900');
                             $('#logout-menu').css('display', 'inline');
                             alertCustom("Auto logged in as: </br> <b>test_user</b>", 'success');
                         })
                         .catch(function (err) {
-                            console.log("Error in auto-login");
-                            console.log(err);
+                            alertCustom('error log in', 'danger');
+                            console.log(err)
                         })
 
                 }
